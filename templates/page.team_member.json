@@ -1,0 +1,92 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "quotes_special_MVgV4m": {
+      "type": "quotes-special",
+      "blocks": {
+        "quote_rDtCYe": {
+          "type": "quote",
+          "settings": {
+            "title": "AMAZING",
+            "quote": "The ring is AMAZING. It's an eye catcher for everyone. Extremely well made and we love it",
+            "rate": 5,
+            "author": "— Joseph M.",
+            "info": "",
+            "avatar": "shopify://shop_images/happy-woman.jpg",
+            "product_item": "facet-1ct-pear-necklace",
+            "product_style": "dark"
+          }
+        },
+        "quote_D9RYcq": {
+          "type": "quote",
+          "settings": {
+            "title": "Fantastic !",
+            "quote": "\" Thank you for giving us everything we were looking for to make the absolute perfect ring! \"",
+            "rate": 5,
+            "author": "— Scott O.",
+            "info": "",
+            "avatar": "shopify://shop_images/long-haired-woman.jpg",
+            "product_item": "earrings-1carat-outlet-bezel-solitaire-studs-white",
+            "product_style": "dark"
+          }
+        },
+        "quote_FYyQiJ": {
+          "type": "quote",
+          "settings": {
+            "title": "Absolutely Perfect !",
+            "quote": "Helpful, informative, and affordable, Clean Origin is the place to go for diamond rings.",
+            "rate": 5,
+            "author": "— Michael C.",
+            "info": "",
+            "avatar": "shopify://shop_images/Hero_engagement_banner_mobile.webp",
+            "product_item": "rings-1-carat-round-brilliant-constellation-yellow-gold-ring-white",
+            "product_style": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "quote_rDtCYe",
+        "quote_D9RYcq",
+        "quote_FYyQiJ"
+      ],
+      "custom_css": [
+        "/* Testimonials Split – center left content text */.testimonials-split .testimonials-content,.testimonials-split .testimonials-content * {text-align: center;}",
+        " /* Center stars */.testimonials-split .rating,.testimonials-split .stars {justify-content: center;}",
+        " /* Center author name */.testimonials-split .testimonial-author {text-align: center;}",
+        " /* Center slider arrows */.testimonials-split .testimonial-nav {justify-content: center;}"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#dee9eb",
+        "title_top": "",
+        "title": "Auvera's Testimonials",
+        "des": "",
+        "align-heading": "center",
+        "color_rate": "#f1f1f1",
+        "color_rated": "#14344a",
+        "image_size": "landscape",
+        "size_text": "p",
+        "arrows": true,
+        "draggable": true,
+        "dots": false,
+        "infinite": true,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "quotes_special_MVgV4m"
+  ]
+}

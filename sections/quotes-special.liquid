@@ -1,0 +1,681 @@
+{%-liquid
+  assign image_size = section.settings.image_size
+  assign paddingTop = ''
+  case image_size
+    when 'portrait'
+    assign paddingTop = '120%'
+    when 'square'
+    assign paddingTop = '100%'
+    when 'landscape'
+    assign paddingTop = '75%'
+    when 'wide'
+    assign paddingTop = '56%'
+  endcase
+  
+  assign featured_blocks = section.blocks | where: "type", "quote"
+  assign small_blocks = section.blocks | where: "type", "small_quote"
+-%}
+
+{% style %}
+  .customstyle{{ section.id }} {
+    --g-padding-s-top: {{ paddingTop }};
+    background-color: {{ section.settings.bgsection }};
+    padding: {{ section.settings.paddingsection }};
+    margin: {{ section.settings.marginsection }};
+  }
+  
+  @media (max-width: 767px) {
+    .customstyle{{ section.id }} {
+      padding: {{ section.settings.paddingmobile }};
+      margin: {{ section.settings.marginmobile }};
+    }
+    /* Mobile specific sizing reductions */
+    .reviews-title {
+      font-size: 1.4rem !important;
+    }
+    .review-card-main {
+      padding: 0.85rem !important;
+    }
+    .review-card-main .quote-text {
+      font-size: 0.85rem !important;
+      margin-bottom: 0.8rem !important;
+    }
+    .author-right {
+      max-width: 220px !important; 
+    }
+    .quote-icon-wrap {
+      width: 26px !important;
+      height: 26px !important;
+      margin-bottom: 0.5rem !important;
+    }
+  }
+
+  /* Header Styling */
+  .reviews-header-custom {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .reviews-subtitle {
+    color: {{ section.settings.color_rate }};
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .reviews-title {
+    font-family: var(--font-heading-family), serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--g-color-heading, #111);
+    margin-bottom: 0.4rem;
+  }
+  .reviews-desc {
+    color: #555;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .reviews-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0.8rem 0;
+  }
+  .reviews-divider span {
+    display: block;
+    width: 25px;
+    height: 1px;
+    background-color: {{ section.settings.color_rate }};
+  }
+  .reviews-divider svg {
+    fill: {{ section.settings.color_rate }};
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Featured Card Styling */
+  .quotes-slider.slick-slider {
+    margin-bottom: 0; /* Removes default slick margin */
+  }
+  .review-card-main {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    margin: 5px 10px;
+    text-align: left;
+  }
+  @media (min-width: 768px) {
+    .review-card-main {
+      padding: 1.5rem 2rem;
+    }
+  }
+  
+  .review-card-subtitle {
+    color: #111111; 
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .quote-icon-wrap {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f5f8;
+    color: #5b879d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+  }
+  .quote-icon-wrap svg {
+    width: 14px;
+    height: 14px;
+  }
+  .review-card-main .quote-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 1.2rem;
+  }
+  .review-author-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+  .verified-badge {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #00798a;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  /* Make the image EVEN smaller and constrain width */
+  .author-right {
+    max-width: 280px; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .author-right .image-content__image-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  .author-right .image-content__image-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Ratings */
+  .customstyle{{ section.id }} .rating {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 2px;
+    margin-bottom: 0.6rem;
+  }
+  .customstyle{{ section.id }} .rating li svg {
+    fill: #e0e0e0;
+    width: 14px;
+    height: 14px;
+  }
+  .customstyle{{ section.id }} .rating li.rated svg {
+    fill: {{ section.settings.color_rated }};
+  }
+
+  /* Custom Pagination & Navigation */
+  .custom-slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0.5rem 0 1rem; /* Reduced top margin to push it closer to the cards */
+  }
+  .custom-slider-nav button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e6eff4;
+    border: none;
+    color: #5b879d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .custom-slider-nav button:hover {
+    background: #d0e1e8;
+  }
+  .custom-slider-nav .fraction {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555;
+    letter-spacing: 0.5px;
+  }
+
+  /* More Love Section & Small Cards */
+  .more-love-title {
+    text-align: center;
+    font-family: var(--font-heading-family), sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+  }
+  .review-card-small {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    margin: 6px;
+    text-align: left;
+    height: 100%;
+  }
+  .review-card-small .quote-icon-wrap {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 0.6rem;
+  }
+  .review-card-small .quote-icon-wrap svg { width: 10px; height: 10px; }
+  .review-card-small .quote-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+  .small-slider-wrap .slick-dots {
+    bottom: -20px;
+  }
+{% endstyle %}
+
+<div class="customstyle{{ section.id }}">
+  <div class="{{ section.settings.setwidth }}">
+    
+    <div class="reviews-header-custom" data-aos="{{ section.settings.animation }}" data-aos-duration="500">
+      {%- if section.settings.title_top != blank -%}
+        <div class="reviews-subtitle">{{ section.settings.title_top }}</div>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="reviews-title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.des != blank -%}
+        <div class="reviews-desc">{{ section.settings.des }}</div>
+      {%- endif -%}
+      <div class="reviews-divider">
+        <span></span>
+        <svg viewBox="0 0 24 24"><path d="M12 2L15 10L23 12L15 14L12 22L9 14L1 12L9 10L12 2Z"/></svg>
+        <span></span>
+      </div>
+    </div>
+
+    {%- if featured_blocks.size > 0 -%}
+      <div class="quotes-wrapper position-relative"> 
+        <div class="quotes-slider" id="Quotes-{{ section.id }}" 
+             data-rows="1"
+             data-slidesToShow="1"
+             data-slidestoscroll="1"
+             data-arrows="false"
+             data-dots="false" 
+             data-draggable="{{ section.settings.draggable }}" 
+             data-infinite="{{ section.settings.infinite }}" 
+             data-section-id="{{ section.id }}" 
+             data-section-type="slickCarousels">
+          
+          {%- for block in featured_blocks -%}
+            <div class="carousel__slide-wrapper--{{ block.id }}" {{ block.shopify_attributes }}>
+              <div class="review-card-main mx-auto">
+                <div class="row align-items-center">
+                  <div class="col-12 col-md-8 order-2 order-md-1" data-aos="{{ section.settings.animation }}" data-aos-duration="800">
+                    <div class="pr-md-5 pt-3 pt-md-0">
+                      {%- if block.settings.title != blank -%}
+                        <div class="review-card-subtitle">{{ block.settings.title }}</div>
+                      {%- endif -%}
+                      
+                      {%- if block.settings.rate > 0 -%}
+                        <ul class="rating">
+                          {%- for i in (1..5) -%}
+                            <li class="{% if i <= block.settings.rate %}rated{% endif %}">
+                              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+
+                      <div class="quote-icon-wrap">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                      </div>
+
+                      <div class="quote-text">{{ block.settings.quote }}</div>
+                      
+                      <div class="review-author-wrap">
+                        <span>&mdash; {{ block.settings.author }}</span>
+                        {%- if block.settings.verified -%}
+                          <span class="verified-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Verified Buyer
+                          </span>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-4 order-1 order-md-2" data-aos="{{ section.settings.animation }}" data-aos-duration="1200">
+                    <div class="author-right">
+                      {%- if block.settings.avatar != blank -%}
+                        <div class="image-content__image-wrapper {{ image_size }}" style="padding-top:{{ 1 | divided_by: block.settings.avatar.aspect_ratio | times: 100 }}%;">
+                          {% assign image = block.settings.avatar %}
+                          <img
+                            srcset="
+                              {%- if image.width >= 360 -%}{{ image | image_url: width: 360 }} 360w,{%- endif -%}
+                              {%- if image.width >= 533 -%}{{ image | image_url: width: 533 }} 533w,{%- endif -%}
+                              {%- if image.width >= 720 -%}{{ image | image_url: width: 720 }} 720w,{%- endif -%}
+                              {{ image | image_url }} {{ image.width }}w
+                            "
+                            src="{{ image | image_url: width: 720 }}"
+                            alt="{{ image.alt | escape }}"
+                            class="image-content__image lazyload scale-in"
+                            data-sizes="auto"
+                            loading="lazy"
+                            width="{{ image.width }}"
+                            height="{{ image.height }}"
+                          >
+                        </div>
+                      {%- else -%}
+                        <div class="image-content__image-wrapper {{ image_size }}" style="padding-top: 60%; background:#f4f4f4;">
+                          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="custom-slider-nav" id="custom-nav-{{ section.id }}">
+          <button class="nav-prev">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <div class="fraction"><span class="current">1</span> / <span class="total">{{ featured_blocks.size }}</span></div>
+          <button class="nav-next">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if small_blocks.size > 0 -%}
+      {%- if section.settings.more_love_title != blank -%}
+        <h3 class="more-love-title">{{ section.settings.more_love_title }}</h3>
+      {%- endif -%}
+      
+      <div class="small-slider-wrap pb-4">
+        <div class="quotes-slider" id="Small-Quotes-{{ section.id }}" 
+             data-rows="1"
+             data-slidesToShow="4"
+             data-slidestoscroll="1"
+             data-arrows="false"
+             data-dots="true" 
+             data-draggable="true" 
+             data-infinite="true"
+             data-responsive='[{"breakpoint": 1024,"settings": {"slidesToShow": 3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 576,"settings": {"slidesToShow": 1}}]'
+             data-section-id="{{ section.id }}-small" 
+             data-section-type="slickCarousels">
+             
+             {%- for block in small_blocks -%}
+               <div class="carousel__slide-wrapper--{{ block.id }}" {{ block.shopify_attributes }}>
+                 <div class="review-card-small">
+                    <div class="quote-icon-wrap">
+                      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    </div>
+                    
+                    {%- if block.settings.title != blank -%}
+                      <div class="review-card-subtitle">{{ block.settings.title }}</div>
+                    {%- endif -%}
+                    
+                    {%- if block.settings.rate > 0 -%}
+                      <ul class="rating">
+                        {%- for i in (1..5) -%}
+                          <li class="{% if i <= block.settings.rate %}rated{% endif %}">
+                            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+
+                    <div class="quote-text">{{ block.settings.quote }}</div>
+                    <div class="review-author-wrap">
+                      <span>&mdash; {{ block.settings.author }}</span>
+                    </div>
+                 </div>
+               </div>
+             {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size == 0 -%}
+      {%- render 'no-blocks' -%}
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var $mainSlider = $('#Quotes-{{ section.id }}');
+    var $navWrap = $('#custom-nav-{{ section.id }}');
+    
+    if($mainSlider.length) {
+      // Custom Navigation Controls
+      $navWrap.find('.nav-prev').on('click', function(){
+        $mainSlider.slick('slickPrev');
+      });
+      $navWrap.find('.nav-next').on('click', function(){
+        $mainSlider.slick('slickNext');
+      });
+
+      // Update Fraction
+      $mainSlider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+          var i = (currentSlide ? currentSlide : 0) + 1;
+          $navWrap.find('.current').text(i);
+          $navWrap.find('.total').text(slick.slideCount);
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials Split",
+  "class": "index-section",
+  "max_blocks": 15,
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "options": [
+        { "value": "", "label": "None" },
+        { "value": "fade", "label": "Fade" },
+        { "value": "fade-up", "label": "Fade Up" }
+      ],
+      "label": "Select Animation",
+      "default": "fade-up"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "Box" },
+        { "value": "container-fluid", "label": "Container Fluid" },
+        { "value": "full", "label": "Full" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+      "label": "Background Section",
+      "default": "#f4f7f8"
+    },
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Sub Title Top",
+      "default": "REVIEWS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What Our Customers Say"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description",
+      "default": "Real stories. Real sparkle."
+    },
+    {
+      "type": "text",
+      "id": "more_love_title",
+      "label": "Small Reviews Heading",
+      "default": "More Love"
+    },
+    {
+      "type": "color",
+      "id": "color_rate",
+      "label": "Accent Color (Stars/Lines)",
+      "default": "#d4af37"
+    },
+    {
+      "type": "color",
+      "id": "color_rated",
+      "label": "Color Rated",
+      "default": "#111111"
+    },
+    {
+      "type": "header",
+      "content": "Size Image"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "options": [
+        { "value": "auto", "label": "Adapt to image" },
+        { "value": "portrait", "label": "Portrait (2:3)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "wide", "label": "Wide (16:9)" },
+        { "value": "square", "label": "Square (1:1)" }
+      ],
+      "default": "auto",
+      "label": "Image ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "draggable",
+      "label": "Draggable",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "infinite",
+      "label": "Infinite",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Padding "
+    },
+    {
+      "type": "text",
+      "id": "paddingsection",
+      "label": "Padding Section Desktop",
+      "default": "30px 0px"
+    },
+    {
+      "type": "text",
+      "id": "paddingmobile",
+      "label": "Padding Section Mobile",
+      "default": "20px 0px"
+    },
+    {
+      "type": "header",
+      "content": "Section Margin "
+    },
+    {
+      "type": "text",
+      "id": "marginsection",
+      "label": "Margin Section",
+      "default": "0px"
+    },
+    {
+      "type": "text",
+      "id": "marginmobile",
+      "label": "Margin Mobile",
+      "default": "0px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Featured Quote",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Subheading",
+          "default": "AMAZING"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Text",
+          "default": "The ring is AMAZING. It's an eye catcher for everyone. Extremely well made and we love it."
+        },
+        {
+          "type": "range",
+          "id": "rate",
+          "min": 0, "max": 5, "step": 1,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Joseph M."
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Show Verified Buyer Badge",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "small_quote",
+      "name": "Small Quote (More Love)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Subheading",
+          "default": "AMAZING"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Text",
+          "default": "Absolutely stunning! The detail and quality exceeded my expectations."
+        },
+        {
+          "type": "range",
+          "id": "rate",
+          "min": 0, "max": 5, "step": 1,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Sarah T."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Split",
+      "category": "Text",
+      "blocks": [
+        { "type": "quote" },
+        { "type": "small_quote" },
+        { "type": "small_quote" },
+        { "type": "small_quote" },
+        { "type": "small_quote" }
+      ]
+    }
+  ]
+}
+{% endschema %}

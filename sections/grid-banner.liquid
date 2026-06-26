@@ -1,0 +1,368 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;700;800&display=swap');
+
+  .customstyle{{ section.id }} {
+    --g-gutter: {{ section.settings.gutter_padding }}px;
+    background-color: {{ section.settings.bgsection }};
+    padding: {{ section.settings.paddingsection }};
+    margin: {{ section.settings.marginsection }};
+  }
+  @media (max-width: 767px) {
+    .customstyle{{ section.id }} {
+      padding: {{ section.settings.paddingmobile }};
+      margin: {{ section.settings.marginmobile }};
+    }
+  }
+
+  /* ─── Typography (Outlined Heading matching GOODR style) ────────────── */
+  .customstyle{{ section.id }} .g-section-heading {
+    text-align: {{ section.settings.align-heading }};
+    margin-bottom: 40px;
+  }
+  .customstyle{{ section.id }} .g-heading-outline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(32px, 6vw, 72px);
+    font-weight: 900;
+    color: #ffffff; /* White fill */
+    -webkit-text-stroke: 2px #111740; /* Navy outline */
+    text-transform: uppercase;
+    margin: 0 0 5px;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+  }
+  .customstyle{{ section.id }} .g-subheading {
+    font-family: 'Barlow', sans-serif;
+    font-size: clamp(12px, 3vw, 20px);
+    font-weight: 900;
+    color: #111740; /* Navy fill */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  /* ─── Banner Grid & Image Styling ────────────── */
+  .customstyle{{ section.id }} .banner-theme {
+    border-radius: 12px; /* Smooth corners like screenshot */
+    overflow: hidden;
+    position: relative;
+    display: block;
+    height: 100%;
+    min-height: 350px; 
+  }
+  
+  .customstyle{{ section.id }} .img-grid-banner,
+  .customstyle{{ section.id }} .image-content__image-wrapper,
+  .customstyle{{ section.id }} .image-content__image-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .customstyle{{ section.id }} .image-content__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* ─── Banner Overlay & Text ────────────── */
+  .customstyle{{ section.id }} .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.75) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .customstyle{{ section.id }} .banner-theme figcaption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 24px;
+    z-index: 3;
+    pointer-events: none;
+  }
+  
+  .customstyle{{ section.id }} .banner-theme h3 {
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: clamp(18px, 3vw, 32px) !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 0;
+    text-align: left;
+  }
+
+  .customstyle{{ section.id }} .banner-theme .btn {
+    pointer-events: auto;
+    margin-top: 15px;
+  }
+
+  /* ─── Mobile Scaling Adjustments ────────────── */
+  @media (max-width: 767px) {
+    .customstyle{{ section.id }} .banner-theme {
+      min-height: 200px; /* Prevents tall, stretched boxes on mobile */
+      border-radius: 8px; /* Slightly smaller radius for small screens */
+    }
+    .customstyle{{ section.id }} .banner-theme figcaption {
+      padding: 12px; /* Less padding so text fits */
+    }
+    .customstyle{{ section.id }} .banner-theme h3 {
+      font-size: 16px !important;
+    }
+    .customstyle{{ section.id }} .subtop {
+      font-size: 10px;
+      margin-bottom: 4px !important;
+    }
+    .customstyle{{ section.id }} .rte-setting {
+      font-size: 12px;
+      display: none; /* Optional: hides description on mobile to save space. Remove if you want it visible. */
+    }
+    .customstyle{{ section.id }} .banner-theme .btn {
+      padding: 6px 12px;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  }
+</style>
+
+<div class="customstyle{{ section.id }}" data-aos="{{ section.settings.animation }}" >
+  <div class="{{ section.settings.setwidth }}">
+    <div class="section-block">
+      
+      <div class="g-section-heading">
+        {% if section.settings.title != blank %}
+          <h2 class="g-heading-outline">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.title_top != blank %}
+          <p class="g-subheading">{{ section.settings.title_top }}</p>
+        {% endif %}
+      </div>
+
+      <div class="row gap-desktop {% if section.settings.no_gutter %}no-gutters{% endif %}">
+        {%- for block in section.blocks -%}
+        <div class="col-{{ block.settings.width }} mb-4" {{ block.shopify_attributes }} data-aos="{{ section.settings.animation }}" data-aos-delay="{{ forloop.index | times: 100 }}">
+          <figure class="m-0 banner-theme hv-image-saturate {% if section.settings.no_gutter %}m-0{% endif %}">
+            
+            {%- if block.settings.image != blank -%}
+            <div class="img-grid-banner image-content__image-container d-none d-lg-block">
+              <div class="image-content__image-wrapper">
+                    <img
+                      src="{{ block.settings.image | image_url: width: 1066 }}"
+                      alt="{{ block.settings.image.alt | escape }}"
+                      class="image-content__image lazyload transition"
+                      loading="lazy"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                    >
+              </div>
+            </div>
+
+            <div class="img-grid-banner image-content__image-container d-lg-none">
+              <div class="image-content__image-wrapper">
+                  <img class="image-content__image lazyload transition"
+                    src="{{ block.settings.image_mobile | default: block.settings.image | image_url: width: 600 }}"
+                    alt="{{ block.settings.image_mobile.alt | escape | default: "Banner" }}"
+                    loading="lazy"
+                    width="600"
+                    height="600">
+              </div>
+            </div>
+            
+            <a class="banner-overlay" href="{{ block.settings.button_link | default: "#" }}"></a>
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              <div class="banner-overlay"></div>
+            {%- endif -%}
+            
+            <figcaption>
+              {%- if block.settings.subtitle != blank -%}
+                <div class="subtop mb-2" style="color: #ffffff; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">{{ block.settings.subtitle }}</div>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <h3>{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <div class="rte-setting mt-2 txt-body" style="color: #ffffff;">{{ block.settings.description }}</div>
+              {%- endif -%}
+              {%- if block.settings.button_text != blank -%}
+                <div class="pt-2">
+                  <a href="{{ block.settings.button_link }}" class="btn {{ section.settings.style_btn }} ">
+                    {{ block.settings.button_text }}
+                  </a>
+                </div>
+              {%- endif -%}
+            </figcaption>   
+          </figure>
+        </div>
+        {%- endfor -%}
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Goodr In The Wild Banners",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "options": [
+        { "value": "", "label": "None" },
+        { "value": "fade", "label": "Fade" },
+        { "value": "fade-up", "label": "Fade Up" },
+        { "value": "zoom-in", "label": "Zoom In" }
+      ],
+      "label": "Select Animation",
+      "default": "fade-up"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "Box" },
+        { "value": "container-fluid", "label": "Container Fluid" },
+        { "value": "full", "label": "Full" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+      "label": "Background Section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "GOODR IN THE WILD"
+    },
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Sub Title Top",
+      "default": "FRESH LOOKS FROM OUR FLOCK"
+    },
+    {
+      "type": "select",
+      "id": "align-heading",
+      "label": "Align Heading",
+      "default": "center",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "no_gutter",
+      "label": "No gutters",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "gutter_padding",
+      "label": "Spacing Column",
+      "max": 40, "min": 0, "step": 1, "unit": " px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "text",
+      "id": "paddingsection",
+      "label": "Padding Section",
+      "default": "60px 0px 60px 0px"
+    },
+    {
+      "type": "text",
+      "id": "paddingmobile",
+      "label": "Padding Section Mobile",
+      "default": "40px 0px 40px 0px"
+    },
+    {
+      "type": "header",
+      "content": "Section Margin"
+    },
+    {
+      "type": "text",
+      "id": "marginsection",
+      "label": "Margin Section",
+      "default": "0px 0px 0px 0px"
+    },
+    {
+      "type": "text",
+      "id": "marginmobile",
+      "label": "Margin Mobile",
+      "default": "0px 0px 0px 0px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width (Grid)",
+          "default": "4",
+          "info": "Use 8 for Large blocks, 4 for Small blocks.",
+          "options": [
+            { "value": "4", "label": "Small (33.33%)" },
+            { "value": "6", "label": "Half (50%)" },
+            { "value": "8", "label": "Large (66.67%)" },
+            { "value": "12", "label": "Full (100%)" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "KITTY HAWKERS' RAY BLOCKERS"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Image Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Goodr In The Wild Banners",
+      "category": "Image",
+      "blocks": [
+        { "type": "banner", "settings": { "width": "8", "title": "KITTY HAWKERS' RAY BLOCKERS" } },
+        { "type": "banner", "settings": { "width": "4", "title": "FADE-ER-ADE SHADES" } },
+        { "type": "banner", "settings": { "width": "4", "title": "FREQUENT SKYMALL SHOPPERS" } },
+        { "type": "banner", "settings": { "width": "8", "title": "SWEDISH MEATBALL HANGOVER" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

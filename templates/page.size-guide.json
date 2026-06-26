@@ -1,0 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "advanced_content_tmKRmD": {
+      "type": "advanced-content",
+      "blocks": {
+        "html_hPz4NT": {
+          "type": "html",
+          "settings": {
+            "subtitle": "",
+            "title": "",
+            "size_text": "h3",
+            "code": "",
+            "answer_content": "",
+            "style_btn": "btn-underline btn-underline-white",
+            "button": "",
+            "link": "",
+            "width": "33%",
+            "align": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "html_hPz4NT"
+      ],
+      "name": "Advanced Content",
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "text_color": "rgba(0,0,0,0)",
+        "bgsection": "#ffffff",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_position": "center center",
+        "title_top": "",
+        "title": "",
+        "des": "<style>\n.size-guide-section {\n  padding: 80px 6%;\n  background: #fbf7f2;\n  font-family: Georgia, serif;\n  color: #4b4640;\n}\n\n.size-guide-container {\n  max-width: 1300px;\n  margin: auto;\n}\n\n.size-guide-title {\n  text-align: center;\n  font-size: 44px;\n  margin-bottom: 70px;\n  letter-spacing: 1px;\n}\n\n/* PDF Layout */\n.size-guide-block {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  align-items: center;\n  gap: 70px;\n  margin-bottom: 90px;\n}\n\n.size-guide-content h3 {\n  font-size: 24px;\n  color: #3f3b36;\n  margin-bottom: 28px;\n  text-transform: uppercase;\n}\n\n.size-guide-content p {\n  font-size: 20px;\n  line-height: 1.7;\n  color: #6f6a63;\n  margin-bottom: 30px;\n}\n\n.guide-buttons {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  margin-top: 25px;\n}\n\n.guide-btn {\n  background: #000;\n  color: #fff;\n  padding: 13px 24px;\n  text-decoration: none;\n  font-size: 16px;\n  border-radius: 3px;\n  display: inline-block;\n}\n\n.guide-btn:hover {\n  background: #333;\n}\n\n.or-text {\n  font-size: 18px;\n  color: #6f6a63;\n}\n\n.pdf-preview {\n  width: 100%;\n  height: 650px;\n  border: 4px solid #2d2d2d;\n  background: #fff;\n}\n\n/* Mobile */\n@media (max-width: 768px) {\n  .size-guide-section {\n    padding: 55px 5%;\n  }\n\n  .size-guide-title {\n    font-size: 34px;\n    margin-bottom: 45px;\n  }\n\n  .size-guide-block {\n    grid-template-columns: 1fr;\n    gap: 40px;\n    margin-bottom: 70px;\n  }\n\n  .size-guide-content {\n    text-align: left;\n  }\n\n  .size-guide-content h3 {\n    font-size: 21px;\n  }\n\n  .size-guide-content p {\n    font-size: 17px;\n  }\n\n  .guide-buttons {\n    flex-wrap: wrap;\n  }\n\n  .pdf-preview {\n    height: 520px;\n  }\n}\n</style>\n\n<section class=\"size-guide-section\">\n  <div class=\"size-guide-container\">\n\n    <h2 class=\"size-guide-title\">Size Guide</h2>\n\n    <!-- Ring Guide -->\n    <div class=\"size-guide-block\">\n      <div class=\"size-guide-content\">\n        <h3>Not sure the ideal size for your rings?</h3>\n\n        <p>\n          We want to give you the best shopping experience, so we offer you a simple guide\n          to help identify the exact ring size you should buy and enjoy your product without any setback.\n        </p>\n\n        <p>\n          We recommend you print the manual for a better and more accurate experience.\n        </p>\n\n        <div class=\"guide-buttons\">\n          <a href=\"https://drive.google.com/file/d/1KqwZWXOTRlGVRETMf3Jnei0-xZgIPHvO/view?usp=sharing\" target=\"_blank\" class=\"guide-btn\">\n            Print PDF\n          </a>\n\n          <span class=\"or-text\">or</span>\n\n          <a href=\"https://drive.google.com/file/d/1KqwZWXOTRlGVRETMf3Jnei0-xZgIPHvO/view?usp=sharing\" target=\"_blank\" class=\"guide-btn\">\n            View Full Screen\n          </a>\n        </div>\n      </div>\n\n      <iframe class=\"pdf-preview\" src=\"https://drive.google.com/file/d/1KqwZWXOTRlGVRETMf3Jnei0-xZgIPHvO/preview\">\n      </iframe>\n    </div>\n\n    <!-- Bracelet Guide -->\n    <div class=\"size-guide-block\">\n      <div class=\"size-guide-content\">\n        <h3>Not sure the ideal size for your bracelets?</h3>\n\n        <p>\n          We want to give you the best shopping experience, so we offer you a manual\n          to help identify the exact bracelet size you should buy and enjoy your product comfortably.\n        </p>\n\n        <p>\n          We recommend you print the manual for a better experience.\n        </p>\n\n        <div class=\"guide-buttons\">\n          <a href=\"https://drive.google.com/file/d/1odiwUShR-0rG0HAzdIZGa8p4H9RMO7fx/view?usp=sharing\" target=\"_blank\" class=\"guide-btn\">\n            Print PDF\n          </a>\n\n          <span class=\"or-text\">or</span>\n\n          <a href=\"https://drive.google.com/file/d/1odiwUShR-0rG0HAzdIZGa8p4H9RMO7fx/view?usp=sharing\" target=\"_blank\" class=\"guide-btn\">\n            View Full Screen\n          </a>\n        </div>\n      </div>\n\n      <iframe class=\"pdf-preview\" src=\"https://drive.google.com/file/d/1odiwUShR-0rG0HAzdIZGa8p4H9RMO7fx/preview\">\n      </iframe>\n    </div>\n\n  </div>\n</section>",
+        "align-heading": "center",
+        "padding": true,
+        "gutter_padding": 30,
+        "col_center": false,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "advanced_content_tmKRmD"
+  ]
+}

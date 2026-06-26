@@ -1,0 +1,490 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "49b0a5ba-1ebd-493b-ae50-1ec847159046": {
+      "type": "image-content",
+      "blocks": {
+        "template--21250050228504__49b0a5ba-1ebd-493b-ae50-1ec847159046-text_block-1": {
+          "type": "text_block",
+          "settings": {
+            "width": "75%",
+            "bgtext": "#e7e8e3",
+            "title_color": "rgba(0,0,0,0)",
+            "subtitle": "",
+            "title": "Every diamond begins with precision.",
+            "size_text": "h2",
+            "text": "",
+            "answer_content": "<p>Expert gemologists carefully inspect each piece to ensure brilliance, clarity, and authenticity. Only the finest diamonds pass our standards—delivering unmatched quality and trust.</p>",
+            "style_btn": "btn-underline btn-underline-white",
+            "button": "",
+            "link": "",
+            "enable_padding": true,
+            "block_align": "center",
+            "align": "left"
+          }
+        },
+        "template--21250050228504__49b0a5ba-1ebd-493b-ae50-1ec847159046-image_block-2": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/sqElaNSTF-qNbcoibtINo0UTS_U8RqX3_pIi4UBVMJezLWubUl3OI9Od4QPKrlhGGKB7-bitORiGpFeoJFgthCcyCNS0PKAB85IFn5rSG7ucBq3C6k9Ofe1yHwA8qUKFPFwkK9FYeHBrp0Om4cJ1V_4d7N4KojvaAvxGnN-4hfDl3Dvcsm8eOkK.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--21250050228504__49b0a5ba-1ebd-493b-ae50-1ec847159046-text_block-1",
+        "template--21250050228504__49b0a5ba-1ebd-493b-ae50-1ec847159046-image_block-2"
+      ],
+      "settings": {
+        "animation": "fade",
+        "setwidth": "full",
+        "bgsection": "#e7e8e3",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "bg_pos": "left",
+        "enable_padding": false,
+        "align_center": true,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "40px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "f172e7b1-989c-4feb-a20b-ac2934933476": {
+      "type": "rich-text",
+      "blocks": {
+        "02d7795e-308f-44d9-b007-aa374d77dbcb": {
+          "type": "heading",
+          "settings": {
+            "title": "OUR CRAFTSMANSHIP",
+            "size_text": "h2"
+          }
+        },
+        "5b0f48ed-12f4-43e7-a7fd-3e3ea948966e": {
+          "type": "paragraph",
+          "settings": {
+            "subtext": "Since our journey began, we have been dedicated to delivering excellence in every diamond we create. Rooted in precision and passion, our process blends traditional artistry with modern innovation.\n\nEach diamond is carefully selected, expertly cut, and thoroughly inspected by skilled artisans and gemologists to ensure unmatched brilliance and quality. From sourcing to final finishing, every step is handled with attention to detail and a commitment to perfection.\n\nWe believe in maintaining the highest standards — not just in craftsmanship, but in trust, transparency, and authenticity. Our mission is to bring you diamonds that are not only beautiful, but timeless symbols of elegance and value."
+          }
+        }
+      },
+      "block_order": [
+        "02d7795e-308f-44d9-b007-aa374d77dbcb",
+        "5b0f48ed-12f4-43e7-a7fd-3e3ea948966e"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "gradient_bg": "",
+        "title_color": "rgba(0,0,0,0)",
+        "title_top": "",
+        "title": "",
+        "text": "",
+        "align-heading": "center",
+        "align-content": "left",
+        "paddingsection": "80px 0px 90px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "3a37a7d4-3633-4dd9-93c8-8609cd17d9c4": {
+      "type": "image-content",
+      "blocks": {
+        "18d2b540-6aa2-4967-b7fd-c7eefd2bd1e5": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/QFgthEYE79l10S8kMBRug7_ez-kzLypNtgKCcnWzVKy2ih5jvtUkeEXFdm5AZ-PDORFUNFhT7zoqiSofgcSBi2YHOfheKZfuP9ES-jHYG-EfhNW_GfI2AYhYLQZCYZePTrrzrnx8CjReG6l4n21INuI0tVUfRhuxac2bObvE5HfmvLKJp1gCgVN.jpg"
+          }
+        },
+        "e3cdf781-1586-4bad-94d6-ba09691910ac": {
+          "type": "text_block",
+          "settings": {
+            "width": "100%",
+            "bgtext": "rgba(0,0,0,0)",
+            "title_color": "#ffffff",
+            "subtitle": "Process of",
+            "title": "Diamond Creation",
+            "size_text": "h2",
+            "text": "",
+            "answer_content": "<p>Every diamond begins with a carefully selected seed, chosen for its purity and potential. The seed is placed on a specialized surface and transferred into a controlled growth chamber, where carbon-rich gases are introduced. Under extreme heat and pressure—replicating natural conditions—carbon atoms gradually bond to the seed, forming a diamond crystal. Layer by layer, the diamond grows over time while experts closely monitor the entire process to ensure precision and quality. Once fully formed, the diamond is carefully extracted and then expertly cut and polished to achieve maximum brilliance, clarity, and perfection.</p>",
+            "style_btn": "btn-underline btn-underline-white",
+            "button": "",
+            "link": "",
+            "enable_padding": true,
+            "block_align": "center",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "18d2b540-6aa2-4967-b7fd-c7eefd2bd1e5",
+        "e3cdf781-1586-4bad-94d6-ba09691910ac"
+      ],
+      "settings": {
+        "animation": "fade",
+        "setwidth": "full",
+        "bgsection": "#344a52",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "bg_pos": "left",
+        "enable_padding": false,
+        "align_center": true,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "40px 0px 0px 0px"
+      }
+    },
+    "2d11636f-e0da-4a86-b3b5-c1eda5735347": {
+      "type": "rich-text",
+      "blocks": {
+        "7407acef-3e90-41f5-9ecf-356bd562c30b": {
+          "type": "heading",
+          "settings": {
+            "title": "OUR ARTISANS",
+            "size_text": "h2"
+          }
+        },
+        "8a950665-fd5a-43a3-bf89-8ba1c9967e92": {
+          "type": "paragraph",
+          "settings": {
+            "subtext": "Our expert team of artisans and gemologists work together with precision and passion to craft diamonds of the highest quality. With years of experience and deep understanding of materials, every piece is designed to achieve perfect balance, brilliance, and elegance.\n\nFrom shaping raw diamonds to refining every detail, our craftsmen ensure flawless execution at every stage. Each diamond is carefully cut, polished, and inspected to meet the highest standards of excellence.\n\nWe believe true beauty lies in precision and consistency, which is why every creation is tested and perfected before reaching you. Our commitment to craftsmanship ensures that every diamond we deliver is timeless, durable, and a true reflection of luxury."
+          }
+        }
+      },
+      "block_order": [
+        "7407acef-3e90-41f5-9ecf-356bd562c30b",
+        "8a950665-fd5a-43a3-bf89-8ba1c9967e92"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "gradient_bg": "",
+        "title_color": "rgba(0,0,0,0)",
+        "title_top": "",
+        "title": "",
+        "text": "",
+        "align-heading": "center",
+        "align-content": "left",
+        "paddingsection": "80px 0px 90px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "d72bcc8c-88fe-4415-96f0-06511b070083": {
+      "type": "image-content-6",
+      "blocks": {
+        "template--16716887458110__d72bcc8c-88fe-4415-96f0-06511b070083-16666725974cf35e4d-0": {
+          "type": "image_block",
+          "settings": {
+            "style_content": "default",
+            "w_image": 40,
+            "pos_image": 78,
+            "e_image": "right",
+            "image": "shopify://shop_images/KwszE0XZmvkXL03jE2WZ8kZ9BR9czYydfAxiGoNoQRHPPCS4bTF3E3NHET5Tdj5gsbySEkPC0avYcBVdizN40ftBpFDTa9LRuhuS28fcsZ2Kh4N9FP70ufwp9eTg46_LN8DAWZaxzx1sMCUw6ApSQbp4J2_aR-y8jfteFZV32Xow-lV23MQXoJq.jpg",
+            "image2": "shopify://shop_images/rsXTUIGOkbAkzMhahArQrsKHQxuWxCSwCod0n9UanI8TPHgXkx1yf36pJN8Cfma2PcY8v_AlwaVi-fVPsJyYZNjDoFAaf0DEW_XRQ91OWrqE4GQion5hXns6erG2peXk2vDdeFU2MtId1Nj9NV07KBKOi9ES92W4Jwp_wWK-qaMbSc1VNny5fB2.jpg",
+            "enable_video": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "text_circle": "New Fashion style store",
+            "video_url": "https://www.youtube.com/watch?v=Yghmzsr3S14&ab_channel=Kandra"
+          }
+        },
+        "template--16716887458110__d72bcc8c-88fe-4415-96f0-06511b070083-16666725974cf35e4d-1": {
+          "type": "text_block",
+          "settings": {
+            "bgtext": "rgba(0,0,0,0)",
+            "subtitle": "sustainable",
+            "title": "Who we are?",
+            "size_text": "h2",
+            "text": "",
+            "answer_content": "<p>We are an independent diamond brand dedicated to crafting timeless, elegant pieces that reflect both luxury and responsibility. With a focus on precision and quality, we create diamonds that are not only visually stunning but also ethically sourced and sustainably crafted.</p><p>Our mission is to blend innovation with tradition, delivering jewelry that embodies confidence, sophistication, and lasting value. Every piece we create is designed to offer both beauty and meaning — made to be cherished for a lifetime.</p>",
+            "button": "",
+            "link": "",
+            "style_btn": "btn-underline",
+            "align": "left",
+            "enable_padding_left": true,
+            "enable_padding_right": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16716887458110__d72bcc8c-88fe-4415-96f0-06511b070083-16666725974cf35e4d-0",
+        "template--16716887458110__d72bcc8c-88fe-4415-96f0-06511b070083-16666725974cf35e4d-1"
+      ],
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "#f3efe9",
+        "size": "50-50",
+        "enable_padding": true,
+        "align_center": true,
+        "paddingsection": "100px 0px 100px 0px",
+        "paddingmobile": "60px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "24a28133-2e01-4361-8b00-ad164f72336f": {
+      "type": "image-content",
+      "blocks": {
+        "template--16716887458110__24a28133-2e01-4361-8b00-ad164f72336f-1666686767d1a98887-1": {
+          "type": "text_block",
+          "settings": {
+            "width": "100%",
+            "bgtext": "#ffffff",
+            "title_color": "rgba(0,0,0,0)",
+            "subtitle": "Our Mission",
+            "title": "Ethical and sustainable",
+            "size_text": "h2",
+            "text": "<div class=\"pr-lg-5 mr-lg-4\">\n<p>Need a little newness in your life? We've got you covered. Bringing you \nthe latest drop of more killer clothes, versatile accessories, stand-out \nfootwear, and much, much more. Update those lifesaving essentials \nor bag a knock-out, night-out number.</p>\n      <div class=\"mt-5 pt-4 px-lg-5\">\n        <img class=\"lazyload\" loading=\"lazy\" data-src=\"https://cdn.shopify.com/s/files/1/0830/3722/5240/files/Rectangle_2_4_1.webp?v=1696176878\">\n      </div>\n    \n</div>",
+            "answer_content": "",
+            "style_btn": "btn-underline btn-underline-white",
+            "button": "",
+            "link": "",
+            "enable_padding": false,
+            "block_align": "center",
+            "align": "left"
+          }
+        },
+        "template--16716887458110__24a28133-2e01-4361-8b00-ad164f72336f-1666686767d1a98887-0": {
+          "type": "image_block",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--16716887458110__24a28133-2e01-4361-8b00-ad164f72336f-1666686767d1a98887-1",
+        "template--16716887458110__24a28133-2e01-4361-8b00-ad164f72336f-1666686767d1a98887-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "bg_pos": "left",
+        "enable_padding": true,
+        "align_center": false,
+        "paddingsection": "100px 0px 100px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "image_content_CbjC89": {
+      "type": "image-content",
+      "blocks": {
+        "image_block_KbqDAX": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/8VsJPwaLStZxgAguuC0ID-KIo4fApA27x8oM4X5SXimk32IG8HwEbjgTx_a6EG7r4qoksO3LWcQZ8XRDgbrcndEQIDf0LQwl2ryN0SSQTfgjbR_-OQPYeQQIEI2yNsT1U8tQxTWuAxar0Wpjct0Yb4PrBtMe9h7_v-tBzSzCei-LKSEnXQ3AiGb.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_KbqDAX"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "animation": "",
+        "setwidth": "container-fluid",
+        "bgsection": "#ffffff",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "bg_pos": "left",
+        "enable_padding": true,
+        "align_center": true,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "image_content_DqAKq6": {
+      "type": "image-content",
+      "blocks": {
+        "image_block_qqb4h8": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/eU7aV3WmHIXWU9KnFyo-e3guMduTrUEKT7GdGI7bSwhzbeabzbdgGzCN-KxGJrG9Ekmf5RWPme5SF5kSt7CGQdlHQ8q9eeCtBbItlt39QDIsqg2vsCwMJKzZL9YSxKjC3kOmQdT7MYyv23r2jM6uFbX5OdcxJmBHJcH7U8-NiyhdvkIuGEje4z6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_qqb4h8"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "animation": "",
+        "setwidth": "container-fluid",
+        "bgsection": "#ffffff",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "bg_pos": "left",
+        "enable_padding": true,
+        "align_center": true,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "image_content_PbegNW": {
+      "type": "image-content",
+      "blocks": {
+        "image_block_CbLEgR": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_May_12_2026_03_02_05_PM.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_CbLEgR"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "animation": "",
+        "setwidth": "container-fluid",
+        "bgsection": "#ffffff",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "bg_pos": "left",
+        "enable_padding": true,
+        "align_center": true,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "559f6024-64db-446e-a9dc-976582972dce": {
+      "type": "quotes",
+      "blocks": {
+        "template--16716887458110__559f6024-64db-446e-a9dc-976582972dce-16666891474b2efc36-0": {
+          "type": "quote",
+          "settings": {
+            "title": "Perfect !",
+            "author": "John Alvy",
+            "info": "Engineer",
+            "rate": 5,
+            "quote": "These are comfortable and they look great. I love that the sole is not super thick and oversized like other shoes. Much more subtle understated..."
+          }
+        },
+        "template--16716887458110__559f6024-64db-446e-a9dc-976582972dce-16666891474b2efc36-1": {
+          "type": "quote",
+          "settings": {
+            "title": "Awesome !",
+            "author": "Jacquelyn Rizzo",
+            "info": "Producer",
+            "rate": 5,
+            "quote": "I love this shirt. It feels like a soft sweater but lightweight like a shirt. I wore it to work today. It was 85 and I was fine running around."
+          }
+        },
+        "template--16716887458110__559f6024-64db-446e-a9dc-976582972dce-16666891474b2efc36-2": {
+          "type": "quote",
+          "settings": {
+            "title": "Amazing !",
+            "author": "Hailee Parsons",
+            "info": "Designer",
+            "rate": 5,
+            "quote": "Just right for fall and winter. Quality is there. Order usual size unless you want over sized. Absolutely beautiful and looks amazingly flattering..."
+          }
+        }
+      },
+      "block_order": [
+        "template--16716887458110__559f6024-64db-446e-a9dc-976582972dce-16666891474b2efc36-0",
+        "template--16716887458110__559f6024-64db-446e-a9dc-976582972dce-16666891474b2efc36-1",
+        "template--16716887458110__559f6024-64db-446e-a9dc-976582972dce-16666891474b2efc36-2"
+      ],
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "#202025",
+        "title_color": "#ffffff",
+        "title_top": "",
+        "title": "We Love Our Clients",
+        "des": "We are very fortunate to have formed excellent \npartnerships with many of our clients.",
+        "align-heading": "center",
+        "aligntext": "text-left",
+        "style": "style-2",
+        "color_rate": "#f1f1f1",
+        "color_rated": "#ffce00",
+        "size_text": "txt-body",
+        "bg_item": "#343a40",
+        "widthcolumn": 100,
+        "enable_padding_inner": true,
+        "show": 3,
+        "arrows": true,
+        "draggable": true,
+        "dots": false,
+        "infinite": true,
+        "paddingsection": "100px 0px 100px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "a035e328-7cfe-4cf0-81d0-e2f5f0188740": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "heading": "Our store",
+        "address": "<p>123 Fake St.<br/>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm<br/>Saturday, 11am - 9pm<br/>Sunday, 11am - 5pm</p>",
+        "map_address": "301 Front St W, Toronto",
+        "button_text": "Get directions",
+        "show_pin": true,
+        "api_key": "",
+        "map_code": "<div class=\"mapouter\"><div class=\"gmap_canvas\">\n<iframe width=\"600\" height=\"500\" id=\"gmap_canvas\" src=\"https://maps.google.com/maps?q=CN%20Tower,%20301%20Front%20St%20W,%20Toronto,%20ON%20M5V%202T6,%20Canada&t=&z=13&ie=UTF8&iwloc=&output=embed\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" loading=\"lazy\" allowfullscreen></iframe><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style>\n<a href=\"https://www.embedgooglemap.net\">google maps code generator</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>\n</div></div>",
+        "background_image_position": "center center"
+      }
+    },
+    "e07a205a-2023-4ca5-b589-a46cd70b3237": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "bgsection": "#ffffff",
+        "title_top": "Questions?",
+        "title": "Send us an email",
+        "des": "",
+        "align-heading": "center",
+        "answer_content": "<p>This site is protected by reCAPTCHA and the Google <a href=\"https://policies.google.com/privacy\">Privacy Policy</a> and <a href=\"https://policies.google.com/terms\">Terms of Service</a> apply.</p>",
+        "paddingsection": "100px 0px 100px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "49b0a5ba-1ebd-493b-ae50-1ec847159046",
+    "f172e7b1-989c-4feb-a20b-ac2934933476",
+    "3a37a7d4-3633-4dd9-93c8-8609cd17d9c4",
+    "2d11636f-e0da-4a86-b3b5-c1eda5735347",
+    "d72bcc8c-88fe-4415-96f0-06511b070083",
+    "24a28133-2e01-4361-8b00-ad164f72336f",
+    "image_content_CbjC89",
+    "image_content_DqAKq6",
+    "image_content_PbegNW",
+    "559f6024-64db-446e-a9dc-976582972dce",
+    "a035e328-7cfe-4cf0-81d0-e2f5f0188740",
+    "e07a205a-2023-4ca5-b589-a46cd70b3237"
+  ]
+}

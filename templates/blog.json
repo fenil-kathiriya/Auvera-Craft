@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "blog-template-1",
+      "settings": {
+        "animation": "fade-up",
+        "blog_layout": "grid",
+        "grid_column": "3",
+        "item_style": "blog-1",
+        "image_size": "landscape",
+        "enable_btn_blog": false,
+        "style_btn": "btn-theme btn-sm",
+        "enable_date": false,
+        "enable_tag": false,
+        "enable_comment": false,
+        "enable_short": false,
+        "limit": 12,
+        "type_pagination": "scroll",
+        "sidebar_enable": false,
+        "sidebar_position": "right",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

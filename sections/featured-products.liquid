@@ -1,0 +1,758 @@
+{%- comment -%} =====================================================
+  SLIDER WITH BRUTALIST SIDEBAR + AUVERA CRAFT COLORS
+  Layout: Left Sidebar CTA + Right Scrolling Slider
+  ===================================================== {%- endcomment -%}
+
+<style>
+/* Added Cormorant for the elegant serif product titles */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;700&family=Cormorant:wght@400;500;600;700&display=swap');
+
+/* ─── Base Palette & Section ──────────────────────────────────── */
+:root {
+  --g-bg: #FAF8F5;         /* Auvera Cream */
+  --g-navy: #1E1E1E;       /* Auvera Charcoal */
+  --g-navy-dark: #1E1E1E;  /* Auvera Charcoal */
+  --g-pink: #D4B27E;       /* Auvera Gold */
+  --g-pink-hover: #C8A46A; /* Auvera Gold Hover */
+  --g-white: #ffffff;      /* Pure White for Cards */
+  --g-border: #E8E2D9;     /* Soft Beige Border */
+  --g-text-gray: #6b7280;  /* Subtitle Text */
+}
+
+.goodr-section-{{ section.id }} {
+  background: var(--g-bg);
+  padding: {{ section.settings.paddingsection }};
+  overflow: hidden; 
+}
+@media (max-width: 767px) {
+  .goodr-section-{{ section.id }} {
+    padding: {{ section.settings.paddingmobile }};
+  }
+}
+
+/* ─── Layout (Sidebar + Main Slider) ──────────────────────────── */
+.goodr-section-{{ section.id }} .g-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 1024px) {
+  .goodr-section-{{ section.id }} .g-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .goodr-section-{{ section.id }} .g-sidebar {
+    flex: 0 0 320px;
+    position: sticky;
+    top: 60px;
+    padding-right: 20px;
+  }
+  .goodr-section-{{ section.id }} .g-main {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ─── Sidebar Typography ──────────────────────────────────────── */
+.goodr-section-{{ section.id }} .g-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(60px, 8vw, 100px);
+  color: var(--g-navy);
+  margin: 0;
+  line-height: 0.85;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+.goodr-section-{{ section.id }} .g-supertitle {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px; 
+  font-weight: 700;
+  letter-spacing: 0.15em; 
+  text-transform: uppercase;
+  color: var(--g-navy); 
+  margin: 15px 0 60px;
+}
+.goodr-section-{{ section.id }} .g-desc {
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px; 
+  color: var(--g-navy); 
+  margin: 0 0 12px;
+}
+
+/* ─── The Pink Pill Button -> Now Gold Pill Button ────────────── */
+.goodr-section-{{ section.id }} .g-shop-all-btn {
+  display: inline-block; 
+  width: calc(100% - 6px);
+  max-width: 260px;
+  margin-left: 6px; 
+  margin-bottom: 6px;
+  padding: 14px 20px;
+  background: var(--g-pink); 
+  border-radius: 60px;
+  color: var(--g-white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px; 
+  font-weight: 700;
+  letter-spacing: 0.1em; 
+  text-transform: uppercase;
+  cursor: pointer; 
+  text-align: center;
+  text-decoration: none;
+  -webkit-text-stroke: 0px var(--g-navy); 
+  paint-order: stroke fill;
+  border: 3px solid var(--g-navy);
+  box-shadow: -6px 6px 0px var(--g-navy); 
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.goodr-section-{{ section.id }} .g-shop-all-btn:hover {
+  transform: translate(-3px, 3px);
+  box-shadow: -3px 3px 0px var(--g-navy);
+}
+
+/* ─── Slider Controls (Arrows) ────────────────────────────────── */
+.goodr-section-{{ section.id }} .g-slider-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.goodr-section-{{ section.id }} .g-arrow-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--g-navy);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+.goodr-section-{{ section.id }} .g-arrow-btn:hover {
+  opacity: 0.6;
+}
+.goodr-section-{{ section.id }} .g-arrow-btn svg {
+  width: 40px; height: 20px; stroke: currentColor; stroke-width: 1.5;
+}
+
+/* ─── Mobile specific layout to match photo ───────────────────── */
+@media (max-width: 1023px) {
+  .goodr-section-{{ section.id }} .g-layout {
+    position: relative;
+  }
+  .goodr-section-{{ section.id }} .g-sidebar {
+    padding-right: 110px; /* Space for absolute arrows */
+  }
+  .goodr-section-{{ section.id }} .g-slider-controls {
+    position: absolute;
+    top: 5px;
+    right: 15px; /* Accounting for typical container padding */
+    margin: 0;
+    width: auto;
+    z-index: 10;
+  }
+  .goodr-section-{{ section.id }} .g-slider-controls > div:first-child {
+    display: none; /* Hide empty spacer */
+  }
+  .goodr-section-{{ section.id }} .g-arrow-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--g-border, #E8E2D9);
+    padding: 0;
+    background: transparent;
+  }
+  .goodr-section-{{ section.id }} .g-arrow-btn svg {
+    width: 20px;
+    height: 12px;
+  }
+  .goodr-section-{{ section.id }} .g-supertitle {
+    margin-bottom: 25px; /* Reduce gap to match photo */
+  }
+  .goodr-section-{{ section.id }} .g-title {
+    font-size: clamp(40px, 8vw, 60px); /* Better fit alongside arrows */
+  }
+  .goodr-section-{{ section.id }} .g-shop-all-btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    max-width: 200px;
+  }
+}
+
+/* ─── Slider Grid ─────────────────────────────────────────────── */
+.goodr-section-{{ section.id }} .g-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  
+  /* Added padding and negative margin to prevent hover cut-off inside overflow-x container */
+  padding-top: 15px; 
+  padding-bottom: 30px; 
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
+  
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+.goodr-section-{{ section.id }} .g-grid::-webkit-scrollbar { 
+  display: none; 
+}
+
+/* ─── Product Card ────────────────────────────────────────────── */
+.goodr-section-{{ section.id }} .g-card {
+  flex: 0 0 calc((100% / {{ section.settings.cols_desktop }}) - 15px);
+  scroll-snap-align: start;
+  background: var(--g-white);
+  border: 1.5px solid var(--g-border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  min-width: 260px;
+}
+@media (max-width: 1024px) {
+  .goodr-section-{{ section.id }} .g-card {
+    flex: 0 0 calc((100% / {{ section.settings.cols_tablet }}) - 10px);
+  }
+}
+@media (max-width: 640px) {
+  .goodr-section-{{ section.id }} .g-card {
+    flex: 0 0 70%;
+  }
+}
+
+.goodr-section-{{ section.id }} .g-card:hover {
+  box-shadow: 0 10px 36px rgba(30,30,30,0.1);
+  transform: translateY(-4px);
+  border-color: var(--g-pink); /* Changes border to gold on hover */
+}
+.goodr-section-{{ section.id }} .g-card-link {
+  display: flex; flex-direction: column;
+  height: 100%; text-decoration: none; color: inherit;
+}
+
+/* Card Images */
+.goodr-section-{{ section.id }} .g-img-wrap {
+  width: 100%; aspect-ratio: 1 / 1;
+  overflow: hidden; background: var(--g-white);
+  border-radius: 12px 12px 0 0; position: relative;
+}
+.goodr-section-{{ section.id }} .g-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: block; transition: opacity 0.38s ease;
+}
+.goodr-section-{{ section.id }} .g-img--product {
+  opacity: 1; object-fit: contain; padding: 20px;
+}
+.goodr-section-{{ section.id }} .g-img--lifestyle {
+  opacity: 0; object-fit: cover; padding: 0;
+}
+.goodr-section-{{ section.id }} .g-card:hover .g-img--product { opacity: 0; }
+.goodr-section-{{ section.id }} .g-card:hover .g-img--lifestyle { opacity: 1; }
+
+/* Card Body */
+.goodr-section-{{ section.id }} .g-body {
+  padding: 16px 16px 18px;
+  display: flex; flex-direction: column; flex: 1; gap: 8px;
+}
+
+/* Product Title - UPDATED TO CORMORANT SERIF */
+.goodr-section-{{ section.id }} .g-card-title {
+  font-family: 'Cormorant', serif;
+  font-size: 22px; 
+  font-weight: 500; 
+  text-transform: none; 
+  color: var(--g-navy);
+  letter-spacing: 0.02em; 
+  line-height: 1.35; 
+  margin: 0;
+}
+
+/* Reviews */
+.goodr-section-{{ section.id }} .g-reviews {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 8px; 
+}
+.goodr-section-{{ section.id }} .g-stars {
+  display: flex; align-items: center; gap: 1px;
+}
+.goodr-section-{{ section.id }} .g-review-count {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px; color: var(--g-text-gray);
+}
+
+/* Card Footers (Default & Hover) */
+.goodr-section-{{ section.id }} .g-footer-default {
+  display: flex; align-items: center; justify-content: space-between; margin-top: auto;
+}
+.goodr-section-{{ section.id }} .g-card:hover .g-footer-default { display: none; }
+
+.goodr-section-{{ section.id }} .g-footer-hover {
+  display: none; margin-top: auto;
+}
+.goodr-section-{{ section.id }} .g-card:hover .g-footer-hover { display: block; }
+
+/* Prices - UPDATED TO BARLOW CONDENSED */
+.goodr-section-{{ section.id }} .g-prices {
+  display: flex; align-items: baseline; gap: 7px;
+}
+.goodr-section-{{ section.id }} .g-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px; font-weight: 900;
+  color: var(--g-navy); letter-spacing: 0.02em;
+}
+.goodr-section-{{ section.id }} .g-compare {
+  font-family: 'Barlow', sans-serif;
+  font-size: 17px; color: var(--g-text-gray); text-decoration: line-through;
+}
+
+/* Brutalist Add Buttons inside Card - UPDATED TO BARLOW CONDENSED */
+.goodr-section-{{ section.id }} .g-btn-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--g-pink); border: 2px solid var(--g-navy);
+  color: var(--g-navy);
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; padding: 0;
+  box-shadow: -3px 3px 0px var(--g-navy);
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  margin-bottom: 4px; margin-right: 2px;
+}
+.goodr-section-{{ section.id }} .g-btn-circle:hover {
+  background: var(--g-pink-hover); 
+  transform: translate(-2px, 2px); 
+  box-shadow: -1px 1px 0px var(--g-navy);
+}
+
+.goodr-section-{{ section.id }} .g-btn-pill {
+  display: block; 
+  width: calc(100% - 4px); margin-left: 4px; margin-bottom: 4px;
+  padding: 10px 15px;
+  background: var(--g-pink); border: 2px solid var(--g-navy);
+  border-radius: 60px; color: var(--g-white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  cursor: pointer; text-align: center;
+  -webkit-text-stroke: 0px var(--g-navy); paint-order: stroke fill;
+  box-shadow: -4px 4px 0px var(--g-navy);
+  transition: background 0.18s ease, transform 0.14s ease, box-shadow 0.14s ease;
+}
+.goodr-section-{{ section.id }} .g-btn-pill:hover {
+  background: var(--g-pink-hover); 
+  transform: translate(-2px, 2px); 
+  box-shadow: -1px 1px 0px var(--g-navy);
+}
+</style>
+
+<section class="goodr-section-{{ section.id }}">
+  <div class="{{ section.settings.setwidth }} g-layout">
+
+    <div class="g-sidebar">
+      {%- if section.settings.title != blank -%}
+        <h2 class="g-title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      
+      {%- if section.settings.title_top != blank -%}
+        <p class="g-supertitle">{{ section.settings.title_top }}</p>
+      {%- endif -%}
+      
+      {%- if section.settings.txtbutton != blank -%}
+        <div class="g-sidebar-action">
+          {%- if section.settings.des != blank -%}
+            <p class="g-desc">{{ section.settings.des }}</p>
+          {%- endif -%}
+          <a href="{{ section.settings.urlbtn | default: '#' }}" class="g-shop-all-btn">{{ section.settings.txtbutton }}</a>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="g-main">
+      
+      <div class="g-slider-controls">
+        <div></div> 
+        <div style="display: flex; gap: 10px;">
+          <button class="g-arrow-btn" onclick="slideProductGrid('{{ section.id }}', -1)" aria-label="Previous">
+            <svg viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 10L40 10M10 10L16 4M10 10L16 16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="g-arrow-btn" onclick="slideProductGrid('{{ section.id }}', 1)" aria-label="Next">
+            <svg viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 10L0 10M30 10L24 4M30 10L24 16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {%- liquid
+        assign collection    = collections[section.settings.collection]
+        assign product_limit = section.settings.rows
+      -%}
+
+      {%- if collection != blank -%}
+      <div class="g-grid" id="slider-{{ section.id }}">
+
+        {%- for product in collection.products limit: product_limit -%}
+          {%- liquid
+            assign cv           = product.selected_or_first_available_variant
+            assign compare_px   = cv.compare_at_price
+            assign sale_px      = cv.price
+            assign img_product  = product.images[0]
+            assign img_lifestyle = product.images[1] | default: product.images[0]
+          -%}
+
+          <div class="g-card" data-aos="{{ section.settings.animation }}" data-aos-delay="{{ forloop.index | times: 60 }}">
+            <a href="{{ product.url | within: collection }}" class="g-card-link" aria-label="{{ product.title | escape }}">
+
+              <div class="g-img-wrap">
+                {%- if img_product != blank -%}
+                  <img src="{{ img_product | image_url: width: 600 }}" width="600" height="600" alt="{{ img_product.alt | escape | default: product.title }}" class="g-img g-img--product" loading="lazy">
+                {%- else -%}
+                  {{ 'product-1' | placeholder_svg_tag: 'g-img g-img--product' }}
+                {%- endif -%}
+                {%- if img_lifestyle != blank -%}
+                  <img src="{{ img_lifestyle | image_url: width: 600, crop: 'center' }}" width="600" height="600" alt="{{ img_lifestyle.alt | escape | default: product.title }}" class="g-img g-img--lifestyle" loading="lazy">
+                {%- endif -%}
+              </div>
+
+              <div class="g-body">
+                <h3 class="g-card-title">{{ product.title }}</h3>
+
+                {%- assign review_count = product.metafields.reviews.rating_count | default: 0 -%}
+                {%- assign star_rating  = product.metafields.reviews.rating.value  | default: 5 | round -%}
+                <div class="g-reviews">
+                  <span class="g-stars" aria-label="{{ star_rating }} out of 5 stars">
+                    {%- for i in (1..5) -%}
+                      {%- if i <= star_rating -%}
+                        <svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 1l1.545 3.13L12 4.635l-2.5 2.437.59 3.44L7 8.88l-3.09 1.632.59-3.44L2 4.635l3.455-.505L7 1z" fill="#D4B27E"/></svg>
+                      {%- else -%}
+                        <svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 1l1.545 3.13L12 4.635l-2.5 2.437.59 3.44L7 8.88l-3.09 1.632.59-3.44L2 4.635l3.455-.505L7 1z" fill="#E8E2D9"/></svg>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </span>
+                </div>
+
+                <div class="g-footer-default">
+                  <div class="g-prices">
+                    <span class="g-price">{{ sale_px | money_without_trailing_zeros }}</span>
+                    {%- if compare_px > sale_px -%}
+                      <span class="g-compare">{{ compare_px | money_without_trailing_zeros }}</span>
+                    {%- endif -%}
+                  </div>
+                  <button class="g-btn-circle" type="button" data-variant-id="{{ cv.id }}" aria-label="Add {{ product.title | escape }} to bag" onclick="event.preventDefault(); event.stopPropagation(); goodrAddToCart({{ cv.id }}, this);">
+                    +
+                  </button>
+                </div>
+
+                <div class="g-footer-hover">
+                  <button class="g-btn-pill" type="button" data-variant-id="{{ cv.id }}" aria-label="Add {{ product.title | escape }} to bag" onclick="event.preventDefault(); event.stopPropagation(); goodrAddToCart({{ cv.id }}, this);">
+                    ADD TO CART +
+                  </button>
+                </div>
+
+              </div>
+            </a>
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- else -%}
+      
+      <div class="g-grid" id="slider-{{ section.id }}">
+        {%- for i in (1..section.settings.rows) -%}
+        <div class="g-card">
+          <div class="g-img-wrap">
+            {{ 'product-1' | placeholder_svg_tag: 'g-img g-img--product' }}
+          </div>
+          <div class="g-body">
+            <h3 class="g-card-title">Radiant Cut Lab Grown Diamond Engagement Ring (Copy)</h3>
+            <div class="g-reviews">
+              <span class="g-stars">
+                 <svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 1l1.545 3.13L12 4.635l-2.5 2.437.59 3.44L7 8.88l-3.09 1.632.59-3.44L2 4.635l3.455-.505L7 1z" fill="#D4B27E"/></svg>
+                 <svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 1l1.545 3.13L12 4.635l-2.5 2.437.59 3.44L7 8.88l-3.09 1.632.59-3.44L2 4.635l3.455-.505L7 1z" fill="#D4B27E"/></svg>
+                 <svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 1l1.545 3.13L12 4.635l-2.5 2.437.59 3.44L7 8.88l-3.09 1.632.59-3.44L2 4.635l3.455-.505L7 1z" fill="#D4B27E"/></svg>
+                 <svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 1l1.545 3.13L12 4.635l-2.5 2.437.59 3.44L7 8.88l-3.09 1.632.59-3.44L2 4.635l3.455-.505L7 1z" fill="#D4B27E"/></svg>
+                 <svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 1l1.545 3.13L12 4.635l-2.5 2.437.59 3.44L7 8.88l-3.09 1.632.59-3.44L2 4.635l3.455-.505L7 1z" fill="#D4B27E"/></svg>
+              </span>
+            </div>
+            <div class="g-footer-default">
+              <div class="g-prices"><span class="g-price">Rs. 200,000</span></div>
+              <button class="g-btn-circle" type="button">+</button>
+            </div>
+            <div class="g-footer-hover">
+              <button class="g-btn-pill" type="button">ADD TO CART +</button>
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>
+
+<script>
+function slideProductGrid(sectionId, direction) {
+  const slider = document.getElementById(`slider-${sectionId}`);
+  if (!slider) return;
+  const card = slider.querySelector('.g-card');
+  if (!card) return;
+  const scrollAmount = card.offsetWidth + 20;
+  slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+
+function goodrAddToCart(variantId, btn) {
+  if (btn.disabled) return;
+  btn.disabled = true;
+
+  var isPill = btn.classList.contains('g-btn-pill');
+  var prev = btn.innerHTML;
+  btn.innerHTML = isPill ? 'ADDING…' : '...';
+
+  var formData = { 'items': [{ 'id': variantId, 'quantity': 1 }] };
+
+  fetch(window.Shopify.routes.root + 'cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(function(r) { 
+    if (!r.ok) throw new Error('Network response was not ok');
+    return r.json(); 
+  })
+  .then(function(data) {
+    btn.innerHTML = isPill ? 'ADDED ✓' : '✓';
+    
+    // 1. Update Global Cart Count (Header Bubbles)
+    updateGlobalCartCount();
+
+    // 2. Refresh Mini Cart UI (Content & Totals)
+    // This uses the theme's built-in mini-cart refresh logic
+    if (window.theme && theme.miniCart) {
+      if (typeof theme.miniCart.generateCart === 'function') theme.miniCart.generateCart();
+      if (typeof theme.miniCart.updateElements === 'function') theme.miniCart.updateElements();
+    }
+
+    // 3. Trigger Theme-wide Event (Compatibility for other apps/scripts)
+    document.dispatchEvent(new CustomEvent('cart:updated', {
+      detail: { cart: data }
+    }));
+
+    // 4. Open the Mini Cart Drawer
+    goodrOpenMiniCart();
+
+    setTimeout(function() { btn.innerHTML = prev; btn.disabled = false; }, 2000);
+  })
+  .catch(function(err) {
+    console.error('Add to cart error:', err);
+    btn.innerHTML = 'ERROR';
+    setTimeout(function() { btn.innerHTML = prev; btn.disabled = false; }, 2000);
+  });
+}
+
+/**
+ * Fetches latest cart data and updates all UI elements showing the count
+ */
+function updateGlobalCartCount() {
+  fetch(window.Shopify.routes.root + 'cart.js')
+    .then(function(res) { return res.json(); })
+    .then(function(cart) {
+      // Find all common Shopify cart count selectors
+      var countSelectors = [
+        '.cart-count-bubble span', 
+        '.cart-count', 
+        '#CartCount span', 
+        '.item-count',
+        '.header__cart-count',
+        '.js-cart-count'
+      ];
+      
+      countSelectors.forEach(function(selector) {
+        var elements = document.querySelectorAll(selector);
+        elements.forEach(function(el) {
+          if (el) {
+            el.textContent = cart.item_count;
+            // Ensure the count bubble is visible if count > 0
+            if (cart.item_count > 0 && el.parentElement) {
+                el.parentElement.classList.remove('hide', 'hidden', 'd-none');
+                el.parentElement.style.display = '';
+            }
+          }
+        });
+      });
+    });
+}
+
+
+function goodrOpenMiniCart() {
+  // 1. Try clicking the cart-indicator (the header cart icon your theme uses)
+  var cartIcon = document.querySelector('.cart-indicator, [class*="cart-indicator"]');
+  if (cartIcon) { cartIcon.click(); return; }
+
+  // 2. Try the mini-cart-content show class approach
+  var miniCart = document.querySelector('.mini-cart-content');
+  if (miniCart) {
+    // Find what class the theme adds to show it — check for common patterns
+    miniCart.classList.remove('hidden', 'is-hidden', 'hide', 'd-none');
+    miniCart.classList.add('active', 'is-active', 'show', 'open');
+    miniCart.removeAttribute('hidden');
+    miniCart.style.display = '';
+    miniCart.style.visibility = 'visible';
+    miniCart.style.opacity = '1';
+    miniCart.style.transform = 'translateX(0)';
+    miniCart.style.right = '0';
+    return;
+  }
+
+  // 3. Fallback: click any cart-related header icon
+  var fallbacks = [
+    '.cart-icon-count', '#cart-icon-bubble', '[data-cart-toggle]',
+    '[aria-label*="cart" i]', 'a[href="/cart"]'
+  ];
+  for (var i = 0; i < fallbacks.length; i++) {
+    var el = document.querySelector(fallbacks[i]);
+    if (el) { el.click(); return; }
+  }
+}
+</script>
+
+{% schema %}
+{
+  "name": "Slider w/ Auvera Cards",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sidebar Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Large Title",
+      "default": "SHOP"
+    },
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Sub Title / Label",
+      "default": "OUR COLLECTIONS"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description above CTA",
+      "default": "View all styles:"
+    },
+    {
+      "type": "header",
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "txtbutton",
+      "label": "Button Label",
+      "default": "SHOP ALL",
+      "info": "Leave blank to hide"
+    },
+    {
+      "type": "url",
+      "id": "urlbtn",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": "Total Products to Show",
+      "min": 1, "max": 16, "step": 1, "default": 6
+    },
+    {
+      "type": "select",
+      "id": "cols_desktop",
+      "label": "Visible Columns (Desktop)",
+      "default": "3",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "cols_tablet",
+      "label": "Visible Columns (Tablet)",
+      "default": "2",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout & Animation"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Container Width",
+      "default": "container",
+      "options": [
+        { "value": "container",       "label": "Boxed"  },
+        { "value": "container-fluid", "label": "Fluid"  },
+        { "value": "full",            "label": "Full"   }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "Card Animation (AOS)",
+      "default": "fade-up",
+      "options": [
+        { "value": "",          "label": "None"      },
+        { "value": "fade",      "label": "Fade"      },
+        { "value": "fade-up",   "label": "Fade Up"   },
+        { "value": "zoom-in",   "label": "Zoom In"   },
+        { "value": "flip-left", "label": "Flip Left" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "text",
+      "id": "paddingsection",
+      "label": "Padding (Desktop)",
+      "default": "60px 0px 60px 0px",
+      "info": "Top Right Bottom Left"
+    },
+    {
+      "type": "text",
+      "id": "paddingmobile",
+      "label": "Padding (Mobile)",
+      "default": "40px 0px 40px 0px",
+      "info": "Top Right Bottom Left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider w/ Auvera Cards",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

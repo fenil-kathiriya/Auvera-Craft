@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "featured_articles_9kgBDP": {
+      "type": "featured-articles",
+      "name": "Blog posts",
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_color": "rgba(0,0,0,0)",
+        "title_top": "",
+        "title": "Blog posts",
+        "des": "",
+        "align-heading": "center",
+        "blog": "news",
+        "item_style": "blog-1",
+        "enable_btn_blog": true,
+        "style_btn": "btn-theme btn-sm",
+        "enable_date": true,
+        "enable_tag": true,
+        "enable_comment": true,
+        "enable_short": true,
+        "image_size": "wide",
+        "enable_slider": true,
+        "gutter_padding": 30,
+        "arrows": false,
+        "draggable": false,
+        "dots": false,
+        "infinite": false,
+        "rows": "1",
+        "limit": 30,
+        "show": 3,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_articles_9kgBDP"
+  ]
+}

@@ -1,0 +1,151 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "newsletter-footer": {
+      "type": "newsletter-footer",
+      "settings": {
+        "enable_newletter_footer": false,
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#000000",
+        "newletter_color": "#ff6f2e",
+        "colorborder": "#e9e9e9",
+        "e_size": "cover",
+        "e_repeat": "no-repeat",
+        "title_top": "",
+        "title": "Subscrible & Get 10%  Discount",
+        "des": "",
+        "html_left": false,
+        "html_left_block": "",
+        "paddingsection": "60px 0px 0px 0px",
+        "paddingmobile": "30px 0px 30px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "1595696762386": {
+          "type": "text",
+          "settings": {
+            "widthlogofooter": 150,
+            "title": "Contact Us",
+            "text": "<div class=\"rte\">\n<p class=\"mt-3\"><strong>Address:</strong> 410 North Scottsdale Road Suite 1000 Tempe, AZ 85288<br>\n<strong>Email:</strong> auveracraft@gmail.com<br>\n<strong>Phone:</strong> +1 (602)330-2510</p>\n</div>",
+            "width": "20%"
+          }
+        },
+        "1562342622030": {
+          "type": "menu",
+          "settings": {
+            "link_list": "main-menu",
+            "width": "auto"
+          }
+        },
+        "1567410176792": {
+          "type": "menu",
+          "settings": {
+            "link_list": "footer",
+            "width": "auto"
+          }
+        },
+        "e9eb7f2c-c446-4ab6-9c0c-636e713bb621": {
+          "type": "menu",
+          "settings": {
+            "link_list": "policies",
+            "width": "auto"
+          }
+        },
+        "ec49d85b-17bb-4b65-a49f-3086aa5430cd": {
+          "type": "newsletter",
+          "settings": {
+            "bg_new": "rgba(0,0,0,0)",
+            "border_new": "#d9d7dd",
+            "btn_bg_new": "#d4b27e",
+            "btn_cl_new": "#212121",
+            "btn_cl_new_hover": "#202025",
+            "title": "",
+            "subheading": "<h4>INBOX TO JEWELLERY</h4><p>Sign up for private sales, new launches, style tips and more.</p>",
+            "enablesocial": true,
+            "width": "33%"
+          }
+        }
+      },
+      "block_order": [
+        "1595696762386",
+        "1562342622030",
+        "1567410176792",
+        "e9eb7f2c-c446-4ab6-9c0c-636e713bb621",
+        "ec49d85b-17bb-4b65-a49f-3086aa5430cd"
+      ],
+      "custom_css": [
+        ".site-footer__copyright {border-top: none;}",
+        ".footer-email {margin-top: -0.4rem;}"
+      ],
+      "settings": {
+        "setwidth": "container-fluid",
+        "background": "#ffffff",
+        "border_headfooter": "#202025",
+        "border-copryright": "#252525",
+        "text": "#202025",
+        "text_hover": "#202025",
+        "title": "#202025",
+        "footer_align_title": "left",
+        "enable_border": false,
+        "footer_font_family": "--g-font-2",
+        "footer_font_size_title": 14,
+        "footer_font_weight": "600",
+        "footer_spacing": 0,
+        "footer_typetext": "uppercase",
+        "acc_mobile": true,
+        "e_ft_currency": false,
+        "enable_image": false,
+        "enable_name": false,
+        "enable_language_selector": true,
+        "payment_info": "svg",
+        "link_list_bottom": "",
+        "copyright": false,
+        "customcopyright": "All rights reserved.",
+        "padding_top": 64,
+        "padding_bottom": 32,
+        "m_padding_top": 32,
+        "m_padding_bottom": 0
+      }
+    },
+    "062de4af-6112-4c1c-afd5-d843383892f3": {
+      "type": "rich-text",
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "gradient_bg": "",
+        "title_color": "#ffffff",
+        "title_top": "",
+        "title": "",
+        "text": "<p>Copyright © <strong>Auvera Craft</strong> all rights reserved. Developed by <a href=\"https://www.appiflyinfotech.com/\" target=\"_blank\" title=\"https://www.appiflyinfotech.com/\"><strong>Appifly Infotech</strong></a></p>",
+        "align-heading": "center",
+        "align-content": "center",
+        "paddingsection": "10px 0px 0px 0px",
+        "paddingmobile": "10px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "newsletter-footer",
+    "footer",
+    "062de4af-6112-4c1c-afd5-d843383892f3"
+  ]
+}

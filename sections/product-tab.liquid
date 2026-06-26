@@ -1,0 +1,645 @@
+{%-liquid
+  assign buttonall = section.settings.buttonall
+  assign buttonall_link = section.settings.buttonall_link
+  assign style_btn = section.settings.style_btn
+  assign enable_carousel = section.settings.enable_carousel
+  assign show = section.settings.show 
+  assign style_tab = section.settings.style_tab
+  case show
+    when 3
+    assign column = ' col-lg-4 col-6'
+    when 4
+    assign column = ' col-lg-3 col-6'
+    when 5
+    assign column = 'col'
+    when 6
+    assign column = ' col-lg-2 col-6'
+  endcase
+-%}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;700;800&family=Cormorant:wght@400;500;600;700&display=swap');
+
+/* ─── Layout & Slider Fixes ──────────────────────────────────── */
+.customstyle{{ section.id }} {
+  background: {{ section.settings.bgsection }};
+  padding: {{ section.settings.paddingsection }};
+  margin: {{ section.settings.marginsection }};
+  overflow: hidden; 
+}
+
+.customstyle{{ section.id }} .prdtab-content {
+  margin-top: -20px;
+  margin-bottom: -40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.customstyle{{ section.id }} .slick-list {
+  padding-top: 20px !important;
+  padding-bottom: 40px !important;
+  margin-top: -20px;
+  margin-bottom: -40px;
+}
+.customstyle{{ section.id }} .slick-track {
+  display: flex;
+}
+.customstyle{{ section.id }} .prdtab-content .producttab-item {
+  padding: 0 {{ section.settings.spaceBetween | divided_by: 2 }}px;
+  margin-bottom: 20px;
+  height: inherit;
+}
+
+/* ─── Typography ─────────────────────────────────────────────── */
+.g-section-heading {
+  text-align: {{ section.settings.align-heading }};
+  margin-bottom: 40px;
+}
+.g-heading-outline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(28px, 6vw, 64px); 
+  font-weight: 900;
+  color: #FAF8F5;
+  -webkit-text-stroke: 2px #1E1E1E;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+.g-subheading {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(12px, 3vw, 18px); 
+  font-weight: 900;
+  color: #1E1E1E;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* ─── Custom Tab Styling ──────────────────────────────────────── */
+.customstyle{{ section.id }} .nav-tabs,
+.customstyle{{ section.id }} .nav-tabs-1 {
+  border: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  justify-content: {{ section.settings.align-heading }};
+  gap: 15px;
+  margin-bottom: 10px;
+  /* Added padding so the active transform/shadow doesn't get clipped */
+  padding-top: 6px;
+  padding-left: 6px; 
+  padding-bottom: 6px;
+}
+
+/* Forcing theme default lines/borders to disappear completely */
+.customstyle{{ section.id }} .nav-tabs::before,
+.customstyle{{ section.id }} .nav-tabs::after,
+.customstyle{{ section.id }} .nav-tabs-1::before,
+.customstyle{{ section.id }} .nav-tabs-1::after,
+.customstyle{{ section.id }} .nav-tabs-1 .nav-item::before,
+.customstyle{{ section.id }} .nav-tabs-1 .nav-item::after,
+.customstyle{{ section.id }} .nav-tabs-1 .nav-link::before,
+.customstyle{{ section.id }} .nav-tabs-1 .nav-link::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.customstyle{{ section.id }} .nav-tabs-1 .nav-item {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.customstyle{{ section.id }} .nav-tabs-1 .nav-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1E1E1E;
+  background: transparent;
+  border: 2px solid transparent !important;
+  border-radius: 60px;
+  padding: 8px 24px;
+  margin-bottom: 0 !important;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.customstyle{{ section.id }} .nav-tabs-1 .nav-link.active {
+  background: #D4B27E !important;
+  border: 2px solid #1E1E1E !important;
+  box-shadow: -4px 4px 0px #1E1E1E !important;
+  color: #1E1E1E !important;
+  transform: translate(2px, -2px);
+}
+
+/* ─── Card Styling ────────────────────────────────────────────── */
+.g-card-custom {
+  background: #fff;
+  border: 1.5px solid #E8E2D9;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  position: relative;
+}
+.g-card-custom:hover {
+  box-shadow: 0 10px 36px rgba(30, 30, 30, 0.1);
+  transform: translateY(-4px);
+  border-color: #D4B27E;
+}
+.g-img-wrap { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; position: relative; background: #ffffff; }
+.g-img-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
+
+.g-info { padding: 16px; display: flex; flex-direction: column; flex: 1; gap: 8px; }
+.g-card-title {
+  font-family: 'Cormorant', serif;
+  font-size: 24px; 
+  font-weight: 500;
+  text-transform: none; 
+  color: #1E1E1E;
+  line-height: 1.3;
+  margin: 0;
+  text-decoration: none;
+}
+
+.g-reviews { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.g-stars { display: flex; gap: 1px; color: #D4B27E; }
+.g-reviews span { font-family: 'Barlow', sans-serif; font-size: 12px; color: #6b7280; }
+
+.g-footer-default { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+.g-footer-hover { display: none; margin-top: auto; }
+.g-card-custom:hover .g-footer-default { display: none; }
+.g-card-custom:hover .g-footer-hover { display: block; }
+
+.g-price { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 900; color: #1E1E1E; }
+
+.g-btn-circle {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: #D4B27E; border: 2px solid #1E1E1E;
+  color: #1E1E1E; font-size: 24px; font-weight: 400;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: -3px 3px 0px #1E1E1E;
+  transition: all 0.15s ease; padding-bottom: 4px;
+}
+.g-btn-pill {
+  width: calc(100% - 4px); margin-left: 4px; margin-bottom: 4px;
+  padding: 10px 15px; background: #D4B27E; border: 2px solid #1E1E1E;
+  border-radius: 60px; color: #ffffff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  cursor: pointer; text-align: center;
+  -webkit-text-stroke: 0px #1E1E1E; paint-order: stroke fill;
+  box-shadow: -4px 4px 0px #1E1E1E;
+  transition: all 0.15s ease;
+}
+.g-btn-pill:hover, .g-btn-circle:hover { transform: translate(-2px, 2px); box-shadow: -1px 1px 0px #1E1E1E; }
+
+/* ─── Mobile Text & Layout Overrides ────────────────────────────── */
+@media (max-width: 767px) {
+  .customstyle{{ section.id }} {
+    padding: {{ section.settings.paddingmobile }};
+    margin: {{ section.settings.marginmobile }};
+  }
+  
+  /* Horizontal scroll for tabs so they don't stack */
+  .customstyle{{ section.id }} .nav-tabs-1 {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-top: 8px;      /* Added Top padding so transform up doesn't cut */
+    padding-bottom: 12px;  /* Added Bottom padding for shadow */
+    padding-left: 8px;     /* Added Left padding for shadow */
+    padding-right: 8px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+  }
+  .customstyle{{ section.id }} .nav-tabs-1::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  /* Smaller Tab Links */
+  .customstyle{{ section.id }} .nav-tabs-1 .nav-link {
+    font-size: 14px;
+    padding: 6px 16px;
+    white-space: nowrap;
+  }
+  
+  /* Card Text Adjustments for 2-column mobile layout */
+  .customstyle{{ section.id }} .g-img-wrap img { 
+    padding: 10px; /* Smaller image padding to maximize space */
+  }
+  .customstyle{{ section.id }} .g-info {
+    padding: 10px; /* Tighter padding inside card */
+    gap: 4px; /* Less vertical space between elements */
+  }
+  .customstyle{{ section.id }} .g-card-title {
+    font-size: 14px; /* Much smaller title so it doesn't wrap 6 lines */
+    line-height: 1.25;
+  }
+  .customstyle{{ section.id }} .g-price {
+    font-size: 18px; /* Scaled down price */
+  }
+  .customstyle{{ section.id }} .g-reviews {
+    margin-bottom: 4px;
+  }
+  .customstyle{{ section.id }} .g-reviews span {
+    font-size: 10px;
+  }
+  
+  /* Button Scaling */
+  .customstyle{{ section.id }} .g-btn-circle {
+    width: 30px; 
+    height: 30px; 
+    font-size: 18px;
+    box-shadow: -2px 2px 0px #1E1E1E;
+    padding-bottom: 2px;
+  }
+  .customstyle{{ section.id }} .g-btn-pill {
+    font-size: 12px; 
+    padding: 6px 10px;
+    box-shadow: -2px 2px 0px #1E1E1E;
+  }
+}
+
+/* ─── Mobile-Only Slider Arrows ────────────────────────────── */
+@media (min-width: 768px) {
+  /* Hide arrows on desktop */
+  .customstyle{{ section.id }} .slick-prev,
+  .customstyle{{ section.id }} .slick-next {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Show and style arrows on mobile */
+  .customstyle{{ section.id }} .slick-prev,
+  .customstyle{{ section.id }} .slick-next {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    background: #D4B27E;
+    border: 2px solid #1E1E1E;
+    border-radius: 50%;
+    color: #1E1E1E;
+    box-shadow: -2px 2px 0px #1E1E1E;
+    transition: all 0.15s ease;
+  }
+  
+  .customstyle{{ section.id }} .slick-prev:active,
+  .customstyle{{ section.id }} .slick-next:active {
+    transform: translate(-1px, 1px);
+    box-shadow: -1px 1px 0px #1E1E1E;
+  }
+
+  /* Position the arrows inside the container */
+  .customstyle{{ section.id }} .slick-prev {
+    left: 5px;
+  }
+  .customstyle{{ section.id }} .slick-next {
+    right: 5px;
+  }
+  
+  /* Ensure the slick slider icons/text inherit the color properly */
+  .customstyle{{ section.id }} .slick-prev::before,
+  .customstyle{{ section.id }} .slick-next::before {
+    color: #1E1E1E;
+    font-size: 18px;
+    opacity: 1;
+  }
+}
+</style>
+
+<div class="customstyle{{ section.id }}" data-aos="{{ section.settings.animation }}">
+  <div class="{{ section.settings.setwidth }}">
+    <div class="section-block">
+      
+      <div class="g-section-heading">
+        {% if section.settings.title != blank %}
+          <h2 class="g-heading-outline">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.title_top != blank %}
+          <p class="g-subheading">{{ section.settings.title_top }}</p>
+        {% endif %}
+      </div>
+
+      <div id="Producttab-{{ section.id }}" data-section-id="{{ section.id }}" 
+              {% if enable_carousel %}data-section-type="producttab"{% endif %}
+              data-rows="{{ section.settings.rows }}"
+              data-slidesToShow="{{ section.settings.show }}"
+              data-arrows="{{ section.settings.arrows }}"
+              data-dots="{{ section.settings.dots }}" 
+              data-draggable="{{ section.settings.draggable }}" 
+              data-infinite="{{ section.settings.infinite }}">
+        
+        <div class="text-{{ section.settings.align-heading }} mt-n4 mb-2">
+          <ul class="nav nav-tabs nav-tabs-1 d-inline-flex style-{{ style_tab }}" role="tablist">
+            {%- for block in section.blocks -%}
+            <li class="nav-item" role="presentation">
+              <a id="{{ block.id }}-tab" class="nav-link nav-link-{{ block.id }} {% if forloop.first %}active{% endif %}" data-toggle="tab" href="#prdtab-{{block.id}}" role="tab" aria-controls="prdtab-{{ block.id }}">
+                {{ block.settings.title }}
+              </a>
+            </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        <div class="tab-content">
+          {%- for block in section.blocks -%}
+          {%- assign collection = collections[block.settings.collection] -%}
+          {%- assign limit = section.settings.limit -%}
+          
+          <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="prdtab-{{ block.id }}" role="tabpanel">
+            <div class="prdtab-content row" {% if enable_carousel %} style="opacity:0" {% endif %}>
+              
+              {%- if collection != blank -%}
+                {%- for product in collection.products limit: limit -%}
+                <div class="producttab-item {% if enable_carousel %} col {% else %} {{ column }} {% endif %}">
+                  <div class="h-100" data-aos="{{ section.settings.animation }}" data-aos-delay="{{ forloop.index | times: 100 }}">
+                    
+                    {%- liquid
+                      assign cv = product.selected_or_first_available_variant
+                      assign review_count = product.metafields.reviews.rating_count | default: 0
+                      assign star_rating  = product.metafields.reviews.rating.value  | default: 5 | round
+                    -%}
+                    <div class="g-card-custom">
+                      <a href="{{ product.url }}" class="g-img-wrap">
+                        <img src="{{ product.featured_image | image_url: width: 600 }}" width="600" height="600" alt="{{ product.title | escape }}" loading="lazy">
+                      </a>
+                      <div class="g-info">
+                        <a href="{{ product.url }}" class="g-card-title">{{ product.title }}</a>
+                        
+                        <div class="g-reviews">
+                          <div class="g-stars">
+                            {%- for i in (1..5) -%}
+                              <svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 1l1.545 3.13L12 4.635l-2.5 2.437.59 3.44L7 8.88l-3.09 1.632.59-3.44L2 4.635l3.455-.505L7 1z" fill="{% if i <= star_rating %}#D4B27E{% else %}#E8E2D9{% endif %}"/></svg>
+                            {%- endfor -%}
+                          </div>
+                          {%- if review_count > 0 -%}<span>{{ review_count }} Reviews</span>{%- endif -%}
+                        </div>
+
+                        <div class="g-footer-default">
+                          <span class="g-price">{{ cv.price | money_without_trailing_zeros }}</span>
+                          <button class="g-btn-circle" onclick="goodrTabAdd({{ cv.id }}, this)">+</button>
+                        </div>
+                        <div class="g-footer-hover">
+                          <button class="g-btn-pill" onclick="goodrTabAdd({{ cv.id }}, this)">ADD TO CART +</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {%- endfor -%}
+              {%- endif -%}
+
+            </div>
+          </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/**
+ * Function to add product to cart and update global UI
+ */
+function goodrTabAdd(variantId, btn) {
+  if (btn.disabled) return;
+  btn.disabled = true;
+  
+  const isPill = btn.classList.contains('g-btn-pill');
+  const originalText = btn.innerHTML;
+  
+  // Visual Loading State
+  btn.innerHTML = isPill ? 'ADDING...' : '...';
+
+  const formData = { 'items': [{ 'id': variantId, 'quantity': 1 }] };
+
+  fetch(window.Shopify.routes.root + 'cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json();
+  })
+  .then(data => {
+    // Success Feedback
+    btn.innerHTML = isPill ? 'ADDED ✓' : '✓';
+    
+    // 1. Update Global Cart Count (Header Bubbles)
+    updateGlobalCartCount();
+
+    // 2. Refresh Mini Cart UI (Content & Totals)
+    if (window.theme && theme.miniCart) {
+      if (typeof theme.miniCart.generateCart === 'function') theme.miniCart.generateCart();
+      if (typeof theme.miniCart.updateElements === 'function') theme.miniCart.updateElements();
+    }
+
+    // 3. Trigger Theme-specific Cart Events
+    document.dispatchEvent(new CustomEvent('cart:updated', {
+      detail: { cart: data }
+    }));
+    
+    // 4. Open the Mini Cart Drawer
+    goodrOpenMiniCart();
+
+    // Reset button after 2 seconds
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }, 2000);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    btn.innerHTML = 'ERROR';
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }, 2000);
+  });
+}
+
+/**
+ * Fetches latest cart data and updates all UI elements showing the count
+ */
+function updateGlobalCartCount() {
+  fetch(window.Shopify.routes.root + 'cart.js')
+    .then(res => res.json())
+    .then(cart => {
+      // Find all common Shopify cart count selectors
+      const countSelectors = [
+        '.cart-count-bubble span', 
+        '.cart-count', 
+        '#CartCount span', 
+        '.item-count',
+        '.header__cart-count',
+        '.js-cart-count'
+      ];
+      
+      countSelectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+          if (el) {
+            el.textContent = cart.item_count;
+            // If the theme hides the bubble when 0, show it now
+            if (cart.item_count > 0 && el.parentElement) {
+                el.parentElement.classList.remove('hide', 'hidden', 'd-none');
+                el.parentElement.style.display = 'block';
+            }
+          }
+        });
+      });
+    });
+}
+
+/**
+ * Ensures the cart drawer opens automatically
+ */
+function goodrOpenMiniCart() {
+  // 1. Try clicking theme indicators
+  var cartIcon = document.querySelector('.cart-indicator, [class*="cart-indicator"]');
+  if (cartIcon) { cartIcon.click(); return; }
+
+  // 2. Try force showing the mini-cart-content
+  var miniCart = document.querySelector('.mini-cart-content');
+  if (miniCart) {
+    miniCart.classList.add('active', 'is-active', 'show', 'open');
+    return;
+  }
+
+  // 3. Fallback: click common cart icons
+  var fallbacks = ['.cart-icon-count', '#cart-icon-bubble', '[data-cart-toggle]', 'a[href="/cart"]'];
+  for (var i = 0; i < fallbacks.length; i++) {
+    var el = document.querySelector(fallbacks[i]);
+    if (el) { el.click(); return; }
+  }
+}
+</script>
+
+{% schema %}
+{
+  "name": "Product Tab (Cart Fix)",
+  "class": "index-section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "options": [
+        { "value": "", "label": "None" },
+        { "value": "fade", "label": "Fade" },
+        { "value": "fade-up", "label": "Fade Up" }
+      ],
+      "label": "Select Animation",
+      "default": "fade-up"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "Box" },
+        { "value": "container-fluid", "label": "Container Fluid" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+      "label": "Background Section",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title (Outlined)",
+      "default": "OUR CRAFTED PIECES"
+    },
+    {
+      "type": "text",
+      "id": "title_top",
+      "label": "Sub Title",
+      "default": "ELEGANCE IN EVERY DETAIL."
+    },
+    {
+      "type": "select",
+      "id": "align-heading",
+      "label": "Align Heading",
+      "default": "center",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "left", "label": "Left" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_carousel",
+      "label": "Enable Carousel",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "label": "Enable Arrows (Mobile)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "min": 3, "max": 20, "step": 1,
+      "label": "Limit items per tab",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "show",
+      "min": 3, "max": 6, "step": 1,
+      "label": "Items to show at once",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "spaceBetween",
+      "label": "Space Between Cards",
+      "max": 40, "min": 0, "step": 1, "unit": "px",
+      "default": 30
+    },
+    { "type": "header", "content": "Spacing" },
+    { "type": "text", "id": "paddingsection", "label": "Padding Section", "default": "60px 0px 60px 0px" },
+    { "type": "text", "id": "paddingmobile", "label": "Padding Mobile", "default": "40px 0px 40px 0px" }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Tab Name", "default": "New Arrivals" },
+        { "label": "Collection", "id": "collection", "type": "collection" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Tab (Auvera Style)",
+      "category": "Collection",
+      "blocks": [ { "type": "collection" }, { "type": "collection" } ]
+    }
+  ]
+}
+{% endschema %}
