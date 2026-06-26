@@ -36,13 +36,12 @@
         </ul>
       </div>
       {%- else -%}
-      <a href="{{ childlink.url }}" 
+      <span 
          class="drawer__nav-link meganav__link{% if childlink.active %} meganav__link--active{% endif %}"
-         {% if childlink.active %} aria-current="page"{% endif %}
          >
         {%- render 'processMenuTitle' , itemName: childlink.title -%}
         {%- render 'processMenuLabel' , itemName: childlink.title -%}
-      </a>
+      </span>
       {%- endif -%}
     </li>
     {%- endfor -%}
