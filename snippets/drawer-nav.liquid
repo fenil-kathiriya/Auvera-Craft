@@ -6,14 +6,13 @@
       {%- if childlink.links != blank -%}
       {%- assign grandchild_list_handle = childlink.title | handleize -%}
       <div class="drawer__nav-has-sublist">
-        <a href="{{ childlink.url }}" 
+        <span 
            class="meganav__link drawer__nav-link drawer__nav-link--split{% if childlink.active %} meganav__link--active{% endif %}" 
            id="DrawerLabel-{{ grandchild_list_handle }}"
-           {% if childlink.active %} aria-current="page"{% endif %}
            >
           {%- render 'processMenuTitle' , itemName: childlink.title -%}
           {%- render 'processMenuLabel' , itemName: childlink.title -%}
-        </a>
+        </span>
         <button data-toggle="collapse" data-target="#DrawerLinklist-{{ grandchild_list_handle }}" type="button" aria-controls="DrawerLinklist-{{ grandchild_list_handle }}" class="text-link drawer__nav-toggle-btn drawer__nav-toggle-btn--small collapsed" aria-label="{{ link.title }} {{ 'general.drawers.menu' | t }}" aria-expanded="false">
           <span class="drawer__nav-toggle--open">
             {%- render 'icon-plus' -%}
