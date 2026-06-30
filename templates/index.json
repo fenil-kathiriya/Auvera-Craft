@@ -1043,7 +1043,7 @@
         "bgsection": "#ffffff",
         "title_color": "rgba(0,0,0,0)",
         "title_top": "",
-        "title": " Latest ArticlesSubscribe for latest news and blog updates from our editor. ",
+        "title": "<center> Latest Articles<br><p>Subscribe for latest news and blog updates from our editor. </p>\n</center>",
         "des": "",
         "align-heading": "left",
         "blog": "news",
