@@ -1042,7 +1042,7 @@
         "title_top": "",
         "title": " Latest Articles",
         "des": "Subscribe for latest news and blog updates from our editor.",
-        "align-heading": "left",
+        "align-heading": "center",
         "blog": "news",
         "item_style": "blog-1",
         "enable_btn_blog": true,
