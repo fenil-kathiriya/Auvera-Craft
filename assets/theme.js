@@ -5760,3 +5760,31 @@ class CheckoutButton extends HTMLElement {
 }
 
 customElements.define('checkout-button', CheckoutButton);
+
+
+ /* Rings & Earrings = 14
+   Bracelets & Necklaces = 21 */
+
+const acProductionDays = 14;
+
+const acShippingDays = 10;
+
+const acTotalDays = acProductionDays + acShippingDays;
+
+const acDate = new Date();
+
+acDate.setDate(acDate.getDate() + acTotalDays);
+
+const acOptions = {
+
+weekday:"long",
+
+day:"numeric",
+
+month:"long"
+
+};
+
+document.getElementById("acEstimatedDelivery").textContent=
+
+acDate.toLocaleDateString("en-US",acOptions);
