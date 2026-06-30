@@ -11819,29 +11819,39 @@ font-size:14px;
 
 
 .view-all-blog-btn{
-    text-align:center;
-    margin:50px 0 20px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:70px 0 30px;
+    clear:both;
 }
 
 .view-all-blog-btn a{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    padding:14px 40px;
+    min-width:220px;
+    height:56px;
+    padding:0 42px;
+
     background:#111;
     color:#fff;
-    text-decoration:none;
-    border:1px solid #111;
+    border:2px solid #111;
     border-radius:50px;
+
     font-size:14px;
     font-weight:600;
-    letter-spacing:.08em;
+    letter-spacing:2px;
     text-transform:uppercase;
-    transition:.35s ease;
+    text-decoration:none;
+
+    transition:all .35s ease;
 }
 
 .view-all-blog-btn a:hover{
     background:#fff;
     color:#111;
-    transform:translateY(-2px);
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
 }
