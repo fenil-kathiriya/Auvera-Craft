@@ -1034,6 +1034,9 @@
     },
     "1660192674d8a6fd50": {
       "type": "featured-articles",
+      "custom_css": [
+        "/* Show only first 6 blog posts */.bloglist-wrapper .bloglist-item:nth-child(n+7) {display: none !important;}"
+      ],
       "settings": {
         "animation": "fade-up",
         "setwidth": "container",
