@@ -200,7 +200,7 @@
     "free_end": "for Free Shipping",
     "free_shipping_text": "Your order is free delivery !",
     "shipping_calculator": true,
-    "enable_term": true,
+    "enable_term": false,
     "agree_text": "I agree with the",
     "terms_link": "#",
     "safe_checkout_pcart": "",
