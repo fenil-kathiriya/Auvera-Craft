@@ -121,6 +121,12 @@
           "disabled": true,
           "settings": {}
         },
+        "custom_liquid_6Jtabf": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"ac-delivery-estimate\">\n    <div class=\"ac-delivery-icon\">\n        <!-- Package Icon -->\n        <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M20 8H4V20H20V8Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/>\n  <path d=\"M12 8V20\" stroke=\"currentColor\" stroke-width=\"1.8\"/>\n  <path d=\"M4 12H20\" stroke=\"currentColor\" stroke-width=\"1.8\"/>\n  <path d=\"M12 8C10.9 8 10 7.1 10 6C10 4.9 10.9 4 12 4C13.1 4 14 4.9 14 6C14 7.1 13.1 8 12 8Z\" stroke=\"currentColor\" stroke-width=\"1.8\"/>\n</svg>\n    </div>\n\n    <div class=\"ac-delivery-content\">\n        <span class=\"ac-delivery-label\">Estimated Delivery</span>\n\n        <p class=\"ac-delivery-text\">\n            Order today and receive your jewelry by\n            <strong id=\"acEstimatedDelivery\"></strong>\n        </p>\n    </div>\n</div>"
+          }
+        },
         "73a647c7-afc5-4d87-aaea-1438dd5ecb92": {
           "type": "icon_with_text",
           "settings": {
@@ -271,6 +277,7 @@
         "bf089f50-667c-4417-a84a-9478625741a1",
         "be13b3d2-2e01-4728-a83f-6488d1b7d4fa",
         "842b653e-7ccb-4f45-ad7c-8619b58f56ee",
+        "custom_liquid_6Jtabf",
         "73a647c7-afc5-4d87-aaea-1438dd5ecb92",
         "8d4704f6-d81d-4390-9ec5-af58698bef51",
         "b7034bf2-48fd-492f-a089-3169873730db",
