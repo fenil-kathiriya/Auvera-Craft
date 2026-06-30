@@ -1057,7 +1057,7 @@
         "arrows": true,
         "draggable": true,
         "dots": true,
-        "infinite": true,
+        "infinite": false,
         "rows": "2",
         "limit": 6,
         "show": 3,
