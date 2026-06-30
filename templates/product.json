@@ -428,13 +428,14 @@
           "type": "faq",
           "settings": {
             "faq_title": "Discounts and Promotions",
-            "faq_des": "<p>Every <strong>Auvera Craft</strong> piece is protected by our <strong>Limited Lifetime Craftsmanship Warranty</strong>, which covers <strong>manufacturing defects</strong>. The warranty does <strong>not</strong> cover <strong>accidental damage</strong>, <strong>ring resizing</strong>, or <strong>shipping costs</strong>. For complete details, please read our <a href=\"/pages/warranty-repair-policy\"><strong>Warranty &amp; Repair Policy</strong></a>.</p>"          }
+            "faq_des": "<p>Please note that promotional offers and discount codes cannot be combined. Only one promotion or discount may be applied per order. Gift Cards are excluded from all discounts and promotional offers.</p><h3></h3>"
+          }
         },
         "faq_QqjH4L": {
           "type": "faq",
           "settings": {
             "faq_title": "Lifetime Warranty Policy",
-            "faq_des": "<p>.</p>"
+            "faq_des": "<p>Every <strong>Auvera Craft</strong> piece is protected by our <strong>Limited Lifetime Craftsmanship Warranty</strong>, which covers <strong>manufacturing defects</strong>. The warranty does <strong>not</strong> cover <strong>accidental damage</strong>, <strong>ring resizing</strong>, or <strong>shipping costs</strong>. For complete details, please read our <a href=\"/pages/warranty-repair-policy\"><strong>Warranty &amp; Repair Policy</strong></a>.</p>"
           }
         }
       },
