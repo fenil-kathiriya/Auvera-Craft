@@ -1035,7 +1035,7 @@
     "1660192674d8a6fd50": {
       "type": "featured-articles",
       "custom_css": [
-        "/* Show only first 6 blog posts */.bloglist-wrapper .bloglist-item:nth-child(n+7) {display: none !important;}"
+        "/* Show only first 6 blog posts */.bloglist-wrapper .bloglist-item:nth-child(n + 7) {display: none !important;}"
       ],
       "settings": {
         "animation": "fade-up",
@@ -1043,8 +1043,8 @@
         "bgsection": "#ffffff",
         "title_color": "rgba(0,0,0,0)",
         "title_top": "",
-        "title": " Latest Articles",
-        "des": "Subscribe for latest news and blog updates from our editor.",
+        "title": " <center>Latest Articles</center>",
+        "des": " <center>Subscribe for latest news and blog updates from our editor. </center>",
         "align-heading": "left",
         "blog": "news",
         "item_style": "blog-1",
