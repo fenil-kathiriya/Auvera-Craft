@@ -126,13 +126,13 @@
           "settings": {
             "block_style": "ver",
             "icon_1": "truck",
-            "icon_text_1": "Free US shipping $500+",
+            "icon_text_1": "Free US Shipping on Orders $500+",
             "icon_2": "lock",
             "icon_text_2": "Secure payment",
             "icon_3": "checkmark",
-            "icon_text_3": "Fine Jewelery Without Markups",
-            "icon_4": "shield",
-            "icon_text_4": "Lifetime Warranty"
+            "icon_text_3": "Lifetime Warranty & No Retail Markups",
+            "icon_4": "none",
+            "icon_text_4": ""
           }
         },
         "8d4704f6-d81d-4390-9ec5-af58698bef51": {
