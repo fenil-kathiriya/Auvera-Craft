@@ -124,7 +124,7 @@
         "custom_liquid_6Jtabf": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"acx-estimated-delivery\">\n\n    <div class=\"acx-icon\">\n\n        <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\">\n            <path d=\"M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2L12 2Z\"\n                stroke=\"currentColor\"\n                stroke-width=\"1.7\"\n                stroke-linejoin=\"round\"/>\n        </svg>\n\n    </div>\n\n    <div class=\"acx-content\">\n\n        <div class=\"acx-heading\">\n            Estimated Delivery\n        </div>\n\n        <div class=\"acx-text\">\n\n            Order within\n\n            <span id=\"acxTimer\"></span>\n\n            to Receive your Jewelry by\n\n            <span id=\"acxDeliveryDate\"></span>\n\n        </div>\n\n    </div>\n\n</div>"
+            "custom_liquid": "<div class=\"acx-estimated-delivery\">\n\n    <div class=\"acx-icon\">\n\n        <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\">\n            <path d=\"M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2L12 2Z\"\n                stroke=\"currentColor\"\n                stroke-width=\"1.7\"\n                stroke-linejoin=\"round\"/>\n        </svg>\n\n    </div>\n\n    <div class=\"acx-content\">\n\n        <div class=\"acx-heading\">\n            Estimated Delivery\n        </div>\n\n        <div class=\"acx-text\">\n\n            Order within\n<span id=\"acxTimer\"></span><Br>\n\n            And Receive your Jewelry by\n\n\n            <span id=\"acxDeliveryDate\"></span>\n\n        </div>\n\n    </div>\n\n</div>"
           }
         },
         "73a647c7-afc5-4d87-aaea-1438dd5ecb92": {
