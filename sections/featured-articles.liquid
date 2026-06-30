@@ -301,15 +301,9 @@
             -%}
           </div>
         </div>
-
-        
         {%- endfor -%}
 {% if paginate.pages > 1 %}<div class="blog-pagination text-center mt-5">{{ paginate | default_pagination }}</div>{% endif %}
 {% endpaginate %}
-<div class="view-all-blog-btn">
-  <a href="/blogs/news">View All</a>
-</div>
-
         {%- else -%}
         {%- for i in (1..limit) -%}
         <div class="bloglist-item {{ col_grid }}">
