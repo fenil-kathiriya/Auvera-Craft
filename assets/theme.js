@@ -5762,20 +5762,15 @@ class CheckoutButton extends HTMLElement {
 customElements.define('checkout-button', CheckoutButton);
 
 
- /* Rings & Earrings = 14
-   Bracelets & Necklaces = 21 */
+  /* ===========================
+   Estimated Delivery
+=========================== */
 
-const acProductionDays = 14;
+const acxDelivery = new Date();
 
-const acShippingDays = 10;
+acxDelivery.setDate(acxDelivery.getDate() + 7);
 
-const acTotalDays = acProductionDays + acShippingDays;
-
-const acDate = new Date();
-
-acDate.setDate(acDate.getDate() + acTotalDays);
-
-const acOptions = {
+const acxOptions = {
 
 weekday:"long",
 
@@ -5785,6 +5780,37 @@ month:"long"
 
 };
 
-document.getElementById("acEstimatedDelivery").textContent=
+document.getElementById("acxDeliveryDate").textContent =
+acxDelivery.toLocaleDateString("en-US", acxOptions);
 
-acDate.toLocaleDateString("en-US",acOptions);
+
+
+/* ===========================
+   Countdown
+=========================== */
+
+function acxCountdown(){
+
+const now = new Date();
+
+const midnight = new Date();
+
+midnight.setHours(23,59,59,999);
+
+const diff = midnight-now;
+
+const h=Math.floor(diff/1000/60/60);
+
+const m=Math.floor((diff/1000/60)%60);
+
+const s=Math.floor((diff/1000)%60);
+
+document.getElementById("acxTimer").innerHTML=
+
+`${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+
+}
+
+acxCountdown();
+
+setInterval(acxCountdown,1000);
