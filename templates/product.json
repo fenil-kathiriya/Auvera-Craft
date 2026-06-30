@@ -435,7 +435,7 @@
           "type": "faq",
           "settings": {
             "faq_title": "Lifetime Warranty Policy",
-            "faq_des": "<p>Every <strong>Auvera Craft</strong> piece is protected by our <strong>Limited Lifetime Craftsmanship Warranty</strong>, which covers <strong>manufacturing defects</strong>. The warranty does <strong>not</strong> cover <strong>accidental damage</strong>, <strong>ring resizing</strong>, or <strong>shipping costs</strong>. For complete details, please read our <a href=\"/pages/warranty-repair-policy\"><strong>Warranty &amp; Repair Policy</strong></a>.</p>"
+            "faq_des": "<p>Every <strong>Auvera Craft</strong> piece is protected by our <strong>Limited Lifetime Craftsmanship Warranty</strong>, which covers <strong>manufacturing defects</strong>. The warranty does <strong>not</strong> cover <strong>accidental damage</strong>, <strong>ring resizing</strong>, or <strong>shipping costs</strong>. For complete details, please read our <a href=\"/pages/lifetime-warranty-policy\"><strong>Warranty &amp; Repair Policy</strong></a>.</p>"
           }
         }
       },
