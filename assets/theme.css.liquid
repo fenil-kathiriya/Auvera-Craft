@@ -11662,125 +11662,137 @@ blockquote::before {
 
 
 
-  .ac-delivery-estimate{
+ .acx-estimated-delivery{
 
-    display:flex;
-    align-items:center;
-    gap:18px;
+display:flex;
 
-    padding:18px 22px;
+align-items:center;
 
-    background:#FAF9F7;
+gap:18px;
 
-    border:1px solid #E8DDCB;
+padding:22px;
 
-    border-radius:14px;
+border:1px solid #ECE3D6;
 
-    transition:.35s ease;
+border-radius:14px;
 
-    width:100%;
+background:#FCFBF9;
 
-    box-sizing:border-box;
+transition:.30s ease;
 
-}
+width:100%;
 
-.ac-delivery-estimate:hover{
-
-    border-color:#D7C09B;
-
-    box-shadow:0 12px 28px rgba(0,0,0,.05);
+box-sizing:border-box;
 
 }
 
-.ac-delivery-icon{
+.acx-estimated-delivery:hover{
 
-    width:54px;
+border-color:#D9C3A0;
 
-    height:54px;
-
-    min-width:54px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#F5EFE4;
-
-    color:#B58A4D;
+box-shadow:0 8px 22px rgba(0,0,0,.04);
 
 }
 
-.ac-delivery-content{
+.acx-icon{
 
-    flex:1;
+width:46px;
 
-}
+height:46px;
 
-.ac-delivery-label{
+min-width:46px;
 
-    display:block;
+border-radius:50%;
 
-    font-size:12px;
+display:flex;
 
-    letter-spacing:1.6px;
+align-items:center;
 
-    text-transform:uppercase;
+justify-content:center;
 
-    color:#8D8173;
+background:#F5EFE5;
 
-    font-weight:600;
-
-    margin-bottom:6px;
+color:#A77C42;
 
 }
 
-.ac-delivery-text{
+.acx-content{
 
-    margin:0;
-
-    font-size:16px;
-
-    line-height:1.6;
-
-    color:#222;
+flex:1;
 
 }
 
-#acEstimatedDelivery{
+.acx-heading{
 
-    color:#B58A4D;
+font-size:11px;
 
-    font-weight:700;
+text-transform:uppercase;
+
+letter-spacing:2px;
+
+font-weight:600;
+
+color:#8B8175;
+
+margin-bottom:7px;
+
+}
+
+.acx-text{
+
+font-size:16px;
+
+font-weight:400;
+
+line-height:1.7;
+
+color:#262626;
+
+}
+
+#acxTimer{
+
+font-weight:700;
+
+color:#A77C42;
+
+font-variant-numeric:tabular-nums;
+
+}
+
+#acxDeliveryDate{
+
+font-weight:700;
+
+color:#A77C42;
 
 }
 
 @media(max-width:768px){
 
-.ac-delivery-estimate{
+.acx-estimated-delivery{
 
-padding:16px;
+padding:18px;
 
 gap:14px;
 
 }
 
-.ac-delivery-icon{
+.acx-text{
 
-width:48px;
+font-size:15px;
 
-height:48px;
-
-min-width:48px;
+line-height:1.6;
 
 }
 
-.ac-delivery-text{
+.acx-icon{
 
-font-size:15px;
+width:42px;
+
+height:42px;
+
+min-width:42px;
 
 }
 
@@ -11788,17 +11800,17 @@ font-size:15px;
 
 @media(max-width:480px){
 
-.ac-delivery-estimate{
+.acx-estimated-delivery{
+
+padding:16px;
 
 align-items:flex-start;
 
 }
 
-.ac-delivery-text{
+.acx-text{
 
 font-size:14px;
-
-line-height:1.55;
 
 }
 
