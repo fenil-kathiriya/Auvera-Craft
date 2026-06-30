@@ -124,7 +124,7 @@
         "custom_liquid_6Jtabf": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"ac-delivery-estimate\">\n    <div class=\"ac-delivery-icon\">\n        <!-- Package Icon -->\n       <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M12 20.5L10.55 19.18C5.4 14.5 2 11.42 2 7.63C2 4.55 4.42 2 7.5 2C9.24 2 10.91 2.81 12 4.08C13.09 2.81 14.76 2 16.5 2C19.58 2 22 4.55 22 7.63C22 11.42 18.6 14.5 13.45 19.18L12 20.5Z\"\n        stroke=\"currentColor\"\n        stroke-width=\"1.8\"\n        stroke-linecap=\"round\"\n        stroke-linejoin=\"round\"/>\n</svg>\n    </div>\n\n    <div class=\"ac-delivery-content\">\n        <span class=\"ac-delivery-label\">Estimated Delivery</span>\n\n        <p class=\"ac-delivery-text\">\n            Order today and receive your jewelry by\n            <strong id=\"acEstimatedDelivery\"></strong>\n        </p>\n    </div>\n</div>"
+            "custom_liquid": "<div class=\"ac-delivery-estimate\">\n    <div class=\"ac-delivery-icon\">\n        <!-- Package Icon -->\n       <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2L12 2Z\"\n        stroke=\"currentColor\"\n        stroke-width=\"1.8\"\n        stroke-linejoin=\"round\"/>\n</svg>\n    </div>\n\n    <div class=\"ac-delivery-content\">\n        <span class=\"ac-delivery-label\">Estimated Delivery</span>\n\n        <p class=\"ac-delivery-text\">\n            Order today and receive your jewelry by\n            <strong id=\"acEstimatedDelivery\"></strong>\n        </p>\n    </div>\n</div>"
           }
         },
         "73a647c7-afc5-4d87-aaea-1438dd5ecb92": {
